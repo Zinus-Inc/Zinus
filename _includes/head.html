@@ -1,0 +1,21 @@
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="{{ site.theme_color | default: '#0FA36B' }}"/>
+
+<title>
+  {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+</title>
+
+{% seo %}
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Mermaid for diagrams in posts -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" integrity="sha256-3o6sTjJ3vGguV9bj6O0vujzV7Hc8qYl2QK1I8QdW7Jw=" crossorigin="anonymous"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+
+

@@ -1,0 +1,51 @@
+title: "Zinus Tech Blog"
+description: "Engineering stories and insights from the Zinus team"
+lang: en
+timezone: Asia/Seoul
+
+# Set your production URL or custom domain in the repository settings when ready
+url: ""
+baseurl: ""
+
+permalink: /posts/:year/:month/:day/:slug/
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Zinus Engineering"
+
+social:
+  github: "zinus-inc"
+  linkedin: "company/zinus"
+
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Posts"
+    url: "/posts/"
+  - title: "About"
+    url: "/about/"
+
+theme_color: "#0FA36B"
+
+exclude:
+  - vendor
+  - node_modules
+  - README.md
+  - Gemfile.lock
+
+

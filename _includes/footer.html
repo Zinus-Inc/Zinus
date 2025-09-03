@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© {{ 'now' | date: '%Y' }} Zinus, Inc. All rights reserved.</p>
+    <ul class="social">
+      {% if site.social.github %}
+        <li><a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a></li>
+      {% endif %}
+      {% if site.social.linkedin %}
+        <li><a href="https://www.linkedin.com/{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+    </ul>
+  </div>
+</footer>
+
+

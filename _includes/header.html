@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Zinus Tech Blog">
+      <span class="brand__mark">Z</span>
+      <span class="brand__name">Zinus Engineering</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary navigation">
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+
+
