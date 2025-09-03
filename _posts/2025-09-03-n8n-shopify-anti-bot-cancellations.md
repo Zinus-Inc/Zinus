@@ -32,7 +32,7 @@ This project documents how we built a self‑hosted n8n workflow to automaticall
 
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}}}%%
-flowchart TD
+graph TD
   subgraph Triggers
     A["Shopify orders/create webhook"]
     B["Schedule trigger (every 30m), get recent orders"]
@@ -52,12 +52,12 @@ flowchart TD
 
   J --> K{All items skipped? (warranty-only)}
   K -->|no| L["Do nothing"]
-  K -->|yes| M["GraphQL: orderCancel"]
+  K -->|yes| M["GraphQL orderCancel"]
 
   M --> N{Error: outstanding fulfillments?}
-  N -->|yes| O["GraphQL: fulfillmentCancel"]
+  N -->|yes| O["GraphQL fulfillmentCancel"]
   O --> P["Wait 1-5s"]
-  P --> Q["GraphQL: orderCancel (retry)"]
+  P --> Q["GraphQL orderCancel (retry)"]
   N -->|no| R[Done]
   Q --> S{Errors remain?}
   S -->|yes| T["Escalate / log"]

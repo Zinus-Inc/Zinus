@@ -37,10 +37,12 @@
     document.addEventListener('DOMContentLoaded', function(){
       renderMermaid();
       wirePostSearch();
+      wireHomePostFilter();
     });
   } else {
     renderMermaid();
     wirePostSearch();
+    wireHomePostFilter();
   }
 })();
 
@@ -89,4 +91,48 @@ function wirePostSearch(){
   apply();
 }
 
+// Client-side search and tag filtering on Home latest posts
+function wireHomePostFilter(){
+  var grid = document.getElementById('home-post-grid');
+  if(!grid) return;
+  var cards = Array.from(grid.querySelectorAll('.post-card'));
+  var input = document.getElementById('home-post-search');
+  var count = document.getElementById('home-post-count');
+  var tagButtons = Array.from(document.querySelectorAll('#home-tag-filters .tag-filter'));
+  var activeTags = new Set();
+
+  function apply(){
+    var q = (input && input.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var title = card.getAttribute('data-title');
+      var tags = card.getAttribute('data-tags');
+      var matchesText = !q || (title && title.indexOf(q) > -1);
+      var matchesTags = activeTags.size === 0 || Array.from(activeTags).every(function(t){ return tags && tags.indexOf(t) > -1; });
+      var visible = matchesText && matchesTags;
+      card.style.display = visible ? '' : 'none';
+      if(visible) shown++;
+    });
+    if(count) count.textContent = shown + ' / ' + cards.length + ' posts';
+  }
+
+  if(input) input.addEventListener('input', apply);
+  tagButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var tag = btn.getAttribute('data-tag').toLowerCase();
+      if(activeTags.has(tag)) { activeTags.delete(tag); btn.classList.remove('active'); }
+      else { activeTags.add(tag); btn.classList.add('active'); }
+      apply();
+    });
+  });
+  var clear = document.getElementById('home-clear-filters');
+  if(clear) clear.addEventListener('click', function(){
+    activeTags.clear();
+    tagButtons.forEach(function(b){ b.classList.remove('active'); });
+    if(input) input.value = '';
+    apply();
+  });
+
+  apply();
+}
 

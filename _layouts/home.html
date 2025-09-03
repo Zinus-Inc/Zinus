@@ -11,9 +11,25 @@ layout: default
 
 <section class="posts">
   <h2 class="section-title">Latest posts</h2>
-  <div class="post-grid">
+
+  <div class="post-controls">
+    <input type="search" id="home-post-search" placeholder="Search posts…" aria-label="Search posts"/>
+    <div id="home-tag-filters" class="tag-filters" aria-label="Filter by tag">
+      {% assign all_tags = site.posts | map: 'tags' | compact | join: ',' | split: ',' | uniq | sort %}
+      {% for tag in all_tags %}
+        {% if tag and tag != '' %}
+          <button class="tag-filter" data-tag="{{ tag }}">#{{ tag }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <button id="home-clear-filters" class="clear-filters" type="button">Clear</button>
+    <div id="home-post-count" class="post-count" aria-live="polite"></div>
+    <hr/>
+  </div>
+
+  <div id="home-post-grid" class="post-grid">
     {% for post in site.posts %}
-      <article class="post-card">
+      <article class="post-card" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ' ' | downcase }}">
         <h3 class="post-card__title"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
         <div class="post-card__meta">{{ post.date | date: '%Y.%m.%d' }}</div>
         <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
