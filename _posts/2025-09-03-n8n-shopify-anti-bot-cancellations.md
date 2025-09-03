@@ -44,23 +44,23 @@ flowchart TD
   C --> E[Split line items]
   E --> F[Fetch product for each item]
   F --> G{Product tags include<br/>SEARCHANISE_IGNORE?}
-  G -- yes --> H[Mark item as __skip]
-  G -- no --> I[Keep item]
+  G -->|yes| H[Mark item as __skip]
+  G -->|no| I[Keep item]
   H --> J[Batch complete]
   I --> J
 
   J --> K{All items skipped?<br/>(warranty-only)}
-  K -- no --> L[Do nothing]
-  K -- yes --> M[GraphQL: orderCancel]
+  K -->|no| L[Do nothing]
+  K -->|yes| M[GraphQL: orderCancel]
 
   M --> N{Error: outstanding<br/>fulfillments?}
-  N -- yes --> O[GraphQL: fulfillmentCancel]
+  N -->|yes| O[GraphQL: fulfillmentCancel]
   O --> P[Wait 1–5s]
   P --> Q[GraphQL: orderCancel (retry)]
-  N -- no --> R[Done]
+  N -->|no| R[Done]
   Q --> S{Errors remain?}
-  S -- yes --> T[Escalate / log]
-  S -- no --> R
+  S -->|yes| T[Escalate / log]
+  S -->|no| R
 
   R --> U[Send email via Outlook node]
 ```

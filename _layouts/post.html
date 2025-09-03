@@ -14,8 +14,12 @@ layout: default
       <div class="post__authors">
         {% for a in page.authors %}
           <a class="author" href="{{ a.url }}" target="_blank" rel="noopener">
-            <span class="author__name">{{ a.name }}</span>
-            <span class="author__role">{{ a.role }}</span>
+            {% assign avatar = a.avatar | default: '/assets/img/avatar-fallback.svg' | relative_url %}
+            <img class="author__avatar" src="{{ avatar }}" alt="{{ a.name }}">
+            <span class="author__meta">
+              <span class="author__name">{{ a.name }}</span>
+              <span class="author__role">{{ a.role }}</span>
+            </span>
           </a>
         {% endfor %}
       </div>
