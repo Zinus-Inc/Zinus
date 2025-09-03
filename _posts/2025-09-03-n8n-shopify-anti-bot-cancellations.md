@@ -31,39 +31,39 @@ This project documents how we built a self‑hosted n8n workflow to automaticall
 ## Mermaid diagram
 
 ```mermaid
-%%{init: {'flowchart': {'htmlLabels': false}}}%%
+%%{init: {"flowchart": {"htmlLabels": false}}}%%
 flowchart TD
   subgraph Triggers
-    A[Shopify orders/create webhook]
-    B[Schedule trigger (every 30m) → Get recent orders]
+    A["Shopify orders/create webhook"]
+    B["Schedule trigger (every 30m), get recent orders"]
   end
 
-  A --> C[Get order]
-  B --> D[Loop over recent orders]
+  A --> C["Get order"]
+  B --> D["Loop over recent orders"]
   D --> C
 
-  C --> E[Split line items]
-  E --> F[Fetch product for each item]
+  C --> E["Split line items"]
+  E --> F["Fetch product for each item"]
   F --> G{Product tags include: SEARCHANISE_IGNORE?}
-  G -->|yes| H[Mark item as __skip]
-  G -->|no| I[Keep item]
-  H --> J[Batch complete]
+  G -->|yes| H["Mark item as __skip"]
+  G -->|no| I["Keep item"]
+  H --> J["Batch complete"]
   I --> J
 
   J --> K{All items skipped? (warranty-only)}
-  K -->|no| L[Do nothing]
-  K -->|yes| M[GraphQL: orderCancel]
+  K -->|no| L["Do nothing"]
+  K -->|yes| M["GraphQL: orderCancel"]
 
   M --> N{Error: outstanding fulfillments?}
-  N -->|yes| O[GraphQL: fulfillmentCancel]
-  O --> P[Wait 1–5s]
-  P --> Q[GraphQL: orderCancel (retry)]
+  N -->|yes| O["GraphQL: fulfillmentCancel"]
+  O --> P["Wait 1-5s"]
+  P --> Q["GraphQL: orderCancel (retry)"]
   N -->|no| R[Done]
   Q --> S{Errors remain?}
-  S -->|yes| T[Escalate / log]
+  S -->|yes| T["Escalate / log"]
   S -->|no| R
 
-  R --> U[Send email via Outlook node]
+  R --> U["Send email via Outlook node"]
 ```
 
 ## Key implementation notes
