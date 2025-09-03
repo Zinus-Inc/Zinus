@@ -33,6 +33,8 @@
     var blocks = Array.from(document.querySelectorAll('.mermaid'));
     blocks.forEach(function(block, idx){
       var src = block.textContent;
+      // Remove init directive lines if present (Markdown might keep them inline)
+      src = src.replace(/^%%\{[^%]*\}%%\s*/m, '');
       var id = 'm-' + (idx + 1) + '-' + Date.now();
       mermaid.render(id, src).then(function(result){
         var span = document.createElement('span');

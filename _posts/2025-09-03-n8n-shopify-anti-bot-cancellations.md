@@ -31,7 +31,6 @@ This project documents how we built a self‑hosted n8n workflow to automaticall
 ## Mermaid diagram
 
 ```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}}}%%
 graph TD
   subgraph Triggers
     A["Shopify orders/create webhook"]
