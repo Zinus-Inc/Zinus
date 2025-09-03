@@ -66,6 +66,11 @@ body{
 .post__header{margin:24px 0}
 .post__title{margin:0 0 8px;font-size:34px}
 .post__meta{color:var(--muted-ink)}
+.post__authors{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.author{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 10px;color:var(--ink)}
+.author:hover{border-color:var(--brand)}
+.author__name{font-weight:700}
+.author__role{font-size:12px;color:var(--muted-ink)}
 .post__content img{max-width:100%;height:auto;border-radius:8px}
 .post__content pre{background:#102a43;color:#d9e2ec;padding:16px;border-radius:8px;overflow:auto}
 .post__footer{margin-top:24px;border-top:1px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
