@@ -9,21 +9,33 @@
     });
   }
 
-  // Render Mermaid: convert fenced ```mermaid blocks to <div class="mermaid"> ... </div>
+  // Render Mermaid: convert various fenced mermaid code blocks to <div class="mermaid"> ... </div>
   function renderMermaid(){
     if(typeof mermaid === 'undefined') return;
-    var pres = document.querySelectorAll('pre > code.language-mermaid, pre > code[class="mermaid"], pre code.mermaid');
-    pres.forEach(function(code){
-      var pre = code.parentElement;
+    // 1) figure.highlight wrappers produced by Rouge
+    var figureBlocks = document.querySelectorAll('figure.highlight code.language-mermaid');
+    figureBlocks.forEach(function(code){
+      var wrapper = code.closest('figure.highlight');
+      if(!wrapper) return;
       var container = document.createElement('div');
       container.className = 'mermaid';
       container.textContent = code.textContent;
-      pre.replaceWith(container);
+      wrapper.replaceWith(container);
     });
-    // Handle Rouge-wrapped blocks: <div class="language-mermaid highlighter-rouge"><div class="highlight"><pre>...</pre></div></div>
-    var rouge = document.querySelectorAll('div.language-mermaid.highlighter-rouge');
+    // 2) Generic pre/code patterns
+    var pres = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid, code.language-mermaid, code.mermaid');
+    pres.forEach(function(code){
+      var wrapper = code.closest('pre') || code.parentElement;
+      if(!wrapper) return;
+      var container = document.createElement('div');
+      container.className = 'mermaid';
+      container.textContent = code.textContent;
+      wrapper.replaceWith(container);
+    });
+    // 3) Rouge alt wrapper
+    var rouge = document.querySelectorAll('div.language-mermaid.highlighter-rouge, div.highlighter-rouge.language-mermaid');
     rouge.forEach(function(wrapper){
-      var code = wrapper.querySelector('pre');
+      var code = wrapper.querySelector('pre, code');
       if(!code) return;
       var container = document.createElement('div');
       container.className = 'mermaid';

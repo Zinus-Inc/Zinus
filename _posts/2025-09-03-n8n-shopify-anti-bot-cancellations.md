@@ -28,7 +28,7 @@ This project documents how we built a self‑hosted n8n workflow to automaticall
 - If the order has outstanding fulfillments, call `fulfillmentCancel`, wait briefly, then retry `orderCancel`.
 - Send an operational email once handled.
 
-## Mermaid diagram
+## Diagram
 
 ```mermaid
 graph TD
@@ -49,7 +49,7 @@ graph TD
   H --> J["Batch complete"]
   I --> J
 
-  J --> K{All items skipped? (warranty-only)}
+  J --> K{All items skipped? warranty-only}
   K -->|no| L["Do nothing"]
   K -->|yes| M["GraphQL orderCancel"]
 
@@ -57,7 +57,7 @@ graph TD
   N -->|yes| O["GraphQL fulfillmentCancel"]
   O --> P["Wait 1-5s"]
   P --> Q["GraphQL orderCancel (retry)"]
-  N -->|no| R[Done]
+  N -->|no| R["Done"]
   Q --> S{Errors remain?}
   S -->|yes| T["Escalate / log"]
   S -->|no| R
