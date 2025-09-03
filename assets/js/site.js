@@ -30,7 +30,18 @@
       container.textContent = code.textContent;
       wrapper.replaceWith(container);
     });
-    try { mermaid.run({ querySelector: '.mermaid' }); } catch(e) { console && console.warn && console.warn('Mermaid render failed', e); }
+    var blocks = Array.from(document.querySelectorAll('.mermaid'));
+    blocks.forEach(function(block, idx){
+      var src = block.textContent;
+      var id = 'm-' + (idx + 1) + '-' + Date.now();
+      mermaid.render(id, src).then(function(result){
+        var span = document.createElement('span');
+        span.innerHTML = result.svg;
+        block.replaceWith(span.firstElementChild);
+      }).catch(function(err){
+        console.warn('Mermaid render failed:', err, '\nSource:\n' + src);
+      });
+    });
   }
 
   if(document.readyState === 'loading'){
