@@ -2,6 +2,13 @@
 title: n8n on self-hosted servers to auto-cancel bot-generated warranty‑only Shopify orders
 description: Replacing Shopify Flow with n8n using GraphQL to cancel $0 or low‑value protection plan orders (Mulberry, Route) created by bots
 tags: [shopify, n8n, automation, graphql, anti-fraud]
+authors:
+  - name: Junkuk Kim
+    role: DevOps Engineer, Zinus
+    url: https://www.linkedin.com/in/junkukkim/
+  - name: Bobby Hudgins
+    role: Software Engineer, Zinus
+    url: https://www.linkedin.com/in/thebobhudgins/
 ---
 
 This project documents how we built a self‑hosted n8n workflow to automatically cancel malicious orders that contain only non-public warranty products (e.g., Mulberry, Route) or low‑value $3 protection plans. Attackers were repeatedly creating these orders to pollute our sales signals and downstream operations. The workflow runs reliably in production and replaces a previous attempt with Shopify Flow.

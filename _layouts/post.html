@@ -10,6 +10,16 @@ layout: default
         · <span>{{ page.author | default: site.author }}</span>
       {% endif %}
     </div>
+    {% if page.authors %}
+      <div class="post__authors">
+        {% for a in page.authors %}
+          <a class="author" href="{{ a.url }}" target="_blank" rel="noopener">
+            <span class="author__name">{{ a.name }}</span>
+            <span class="author__role">{{ a.role }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </header>
   <div class="post__content">
     {{ content }}

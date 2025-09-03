@@ -6,6 +6,6 @@
     </linearGradient>
   </defs>
   <rect width="48" height="48" rx="10" fill="url(#g)"/>
-  <path fill="#fff" d="M24 10c-5.5 0-10 4.5-10 10h4a6 6 0 0 1 12 0c0 3.3-2.7 6-6 6h-2v4h2c5.5 0 10-4.5 10-10S29.5 10 24 10zm-2 24h4v4h-4z"/>
+  <text x="50%" y="60%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#ffffff">Z</text>
 </svg>
 
