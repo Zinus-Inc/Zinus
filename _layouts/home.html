@@ -14,7 +14,7 @@ layout: default
   <div class="post-grid">
     {% for post in site.posts %}
       <article class="post-card">
-        <h3 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <h3 class="post-card__title"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
         <div class="post-card__meta">{{ post.date | date: '%Y.%m.%d' }}</div>
         <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
         {% if post.tags %}

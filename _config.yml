@@ -4,8 +4,8 @@ lang: en
 timezone: Asia/Seoul
 
 # Set your production URL or custom domain in the repository settings when ready
-url: ""
-baseurl: ""
+url: "https://zinus-inc.github.io"
+baseurl: "/Zinus"
 
 permalink: /posts/:year/:month/:day/:slug/
 markdown: kramdown
