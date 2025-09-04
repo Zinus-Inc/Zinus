@@ -1,5 +1,5 @@
 ---
-title: Keeping Outlook Mailboxes Lean with n8n: Our “Self-Cleaning Sent Items” Workflow
+title: Keeping Outlook Mailboxes Lean with n8n Our “Self-Cleaning Sent Items” Workflow
 description: A nightly n8n workflow that enforces Outlook mailbox quotas—deleting the oldest Sent Items until usage drops below 49%, preventing 100% lockups, and emailing a tidy report.
 tags: [outlook, n8n, microsoft-graph, automation, email, quota-management, workflows]
 authors:
