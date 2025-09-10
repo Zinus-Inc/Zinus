@@ -36,12 +36,15 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler
+          bundle config set path 'vendor/bundle'
+          bundle config set with 'jekyll_plugins'
           bundle install --jobs 4 --retry 3
 
       - name: Build site
         env:
           JEKYLL_ENV: production
         run: |
+          bundle exec jekyll --version
           bundle exec jekyll build --trace --destination _site
 
       - name: Upload artifact
