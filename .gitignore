@@ -12,6 +12,11 @@ node_modules/
 Wonder-Server/
 ZinusEmbeddedApp/
 
+# Environment files
+.env
+.env.*
+!env.example
+
 # Misc
 .DS_Store
 Thumbs.db

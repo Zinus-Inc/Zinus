@@ -20,6 +20,18 @@ authors:
 
 Zinus Wonder-Server (WAPI) is our public-facing API layer that brokers trusted access between external systems and our Shopify stores. It centralizes cross-cutting concerns like HTTPS enforcement, CORS, rate limiting, authentication/authorization, and integrates with external providers for email, growth, and compliance workflows.
 
+### What is Wonder-Server?
+- **A single, stable API gateway** that shields the Shopify admin APIs and third‑party services behind a consistent contract. Frontends, automations, and partners integrate once with WAPI instead of each downstream system.
+- **An integration policy engine**: enforces transport security, domain allowlists, rate limits, and token scopes so growth projects can move quickly without weakening our perimeter.
+- **An operations companion**: persists third‑party IDs back to Shopify, normalizes payloads, and exposes clear failure modes so Support, CX, and Engineering can reason about incidents.
+
+### Why it matters to the business
+- **Compliance risk containment (California mattress/box‑spring programs)**: auto‑schedules pickups, handles reschedules on refunds, and records external IDs on orders. This blocks costly fines, avoids manual agent time, and keeps our promise to customers and regulators.
+- **Revenue lift from growth surfaces (Klaviyo + Rebuy + CJ)**: safer, faster growth experiments without exposing secrets in the browser. Back‑in‑stock and list‑join endpoints drive top‑of‑funnel; Rebuy personalization increases AOV; CJ cookie governance improves paid attribution accuracy.
+- **Catalog trustworthiness (product feed)**: variant‑level feed curation lowers ad disapprovals and price mismatches across channels, reducing wasted spend and support tickets.
+- **Support efficiency (email relay)**: hCaptcha protects inboxes from bot floods, locale routing gets messages to the right regional team, and attachments/Reply‑To speed case resolution.
+- **Platform safety and stability**: HTTPS enforcement, allowlists, quotas, JWT scopes, and explicit 401/404 semantics reduce outage blast radius and simplify incident triage.
+
 ### Highlights
 - Enforces HTTPS, CORS allowlist per domain, and rate limiting in production
 - JWT-protected private routes with scope-based authorization
@@ -136,6 +148,13 @@ exports.checkScopeAccess = (requiredScopes) => {
 ```
 
 ### Key capabilities
+
+#### Business impact at a glance
+- **Pickup orchestration (CA compliance)**: avoids regulatory penalties and re‑delivery costs; reduces manual cancellation/reschedule work; fewer support touches by writing pickup IDs back to orders for instant lookup.
+- **Growth & personalization**: BIS signups convert dormant demand; list‑join API with consent flags protects deliverability; Rebuy proxy raises AOV without leaking API keys; CJ cookie (13‑month) stabilizes channel ROAS by preserving attribution across subdomains.
+- **Product feed governance**: variant‑granular listings cut “out‑of‑stock” ads and inaccurate pricing; fewer feed disapprovals mean more eligible inventory and lower CPA.
+- **Email relay with hCaptcha**: spam and bot noise drop sharply; automatic region routing shortens time‑to‑first‑response; attachments enable single‑touch resolutions.
+- **Security & resilience**: per‑domain allowlist and quotas cap abuse; JWT scopes enforce least privilege; explicit 401/404 improve developer ergonomics and MTTR.
 
 #### 1) California pickup orchestration (LoadUp + Shopify)
 - Robust item classifier detects mattresses, box springs, and paired combos, transforming Shopify webhooks into actionable pickup requests.
