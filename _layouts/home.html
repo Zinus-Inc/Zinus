@@ -14,6 +14,8 @@ layout: default
 
   <div class="post-controls">
     <input type="search" id="home-post-search" placeholder="Search posts…" aria-label="Search posts"/>
+    <input type="date" id="home-start-date" class="date-input" placeholder="Start date" aria-label="Start date"/>
+    <input type="date" id="home-end-date" class="date-input" placeholder="End date" aria-label="End date"/>
     <div id="home-tag-filters" class="tag-filters" aria-label="Filter by tag">
       {% assign all_tags = site.posts | map: 'tags' | compact | join: ',' | split: ',' | uniq | sort %}
       {% for tag in all_tags %}
@@ -29,7 +31,7 @@ layout: default
 
   <div id="home-post-grid" class="post-grid">
     {% for post in site.posts %}
-      <article class="post-card" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ' ' | downcase }}">
+      <article class="post-card" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ' ' | downcase }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
         <h3 class="post-card__title"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
         <div class="post-card__meta">{{ post.date | date: '%Y.%m.%d' }}</div>
         <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>

@@ -87,6 +87,7 @@ body{
 /* Posts list controls */
 .post-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 16px}
 #post-search{flex:1 1 260px;max-width:420px;padding:8px 10px;border:1px solid var(--border);border-radius:8px}
+.date-input{padding:8px 10px;border:1px solid var(--border);border-radius:8px}
 .tag-filters{display:flex;flex-wrap:wrap;gap:8px}
 .tag-filter{background:#f3fbf7;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--ink);cursor:pointer}
 .tag-filter.active{background:var(--brand);border-color:var(--brand);color:#fff}

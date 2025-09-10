@@ -63,11 +63,13 @@
       renderMermaid();
       wirePostSearch();
       wireHomePostFilter();
+      wireDateFilters();
     });
   } else {
     renderMermaid();
     wirePostSearch();
     wireHomePostFilter();
+    wireDateFilters();
   }
 })();
 
@@ -77,19 +79,27 @@ function wirePostSearch(){
   if(!list) return;
   var items = Array.from(list.querySelectorAll('.post-item'));
   var input = document.getElementById('post-search');
+  var start = document.getElementById('post-start-date');
+  var end = document.getElementById('post-end-date');
   var count = document.getElementById('post-count');
   var tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
   var activeTags = new Set();
 
   function apply(){
     var q = (input && input.value || '').trim().toLowerCase();
+    var startDate = parseDate(start && start.value);
+    var endDate = parseDate(end && end.value, true);
     var shown = 0;
     items.forEach(function(li){
       var title = li.getAttribute('data-title');
       var tags = li.getAttribute('data-tags');
+      var dateStr = li.getAttribute('data-date');
+      var itemDate = parseDate(dateStr);
       var matchesText = !q || (title && title.indexOf(q) > -1);
       var matchesTags = activeTags.size === 0 || Array.from(activeTags).every(function(t){ return tags && tags.indexOf(t) > -1; });
-      var visible = matchesText && matchesTags;
+      var matchesStart = !startDate || (itemDate && itemDate >= startDate);
+      var matchesEnd = !endDate || (itemDate && itemDate <= endDate);
+      var visible = matchesText && matchesTags && matchesStart && matchesEnd;
       li.style.display = visible ? '' : 'none';
       if(visible) shown++;
     });
@@ -97,6 +107,8 @@ function wirePostSearch(){
   }
 
   if(input) input.addEventListener('input', apply);
+  if(start) start.addEventListener('change', apply);
+  if(end) end.addEventListener('change', apply);
   tagButtons.forEach(function(btn){
     btn.addEventListener('click', function(){
       var tag = btn.getAttribute('data-tag').toLowerCase();
@@ -110,6 +122,8 @@ function wirePostSearch(){
     activeTags.clear();
     tagButtons.forEach(function(b){ b.classList.remove('active'); });
     if(input) input.value = '';
+    if(start) start.value = '';
+    if(end) end.value = '';
     apply();
   });
 
@@ -122,19 +136,27 @@ function wireHomePostFilter(){
   if(!grid) return;
   var cards = Array.from(grid.querySelectorAll('.post-card'));
   var input = document.getElementById('home-post-search');
+  var start = document.getElementById('home-start-date');
+  var end = document.getElementById('home-end-date');
   var count = document.getElementById('home-post-count');
   var tagButtons = Array.from(document.querySelectorAll('#home-tag-filters .tag-filter'));
   var activeTags = new Set();
 
   function apply(){
     var q = (input && input.value || '').trim().toLowerCase();
+    var startDate = parseDate(start && start.value);
+    var endDate = parseDate(end && end.value, true);
     var shown = 0;
     cards.forEach(function(card){
       var title = card.getAttribute('data-title');
       var tags = card.getAttribute('data-tags');
+      var dateStr = card.getAttribute('data-date');
+      var itemDate = parseDate(dateStr);
       var matchesText = !q || (title && title.indexOf(q) > -1);
       var matchesTags = activeTags.size === 0 || Array.from(activeTags).every(function(t){ return tags && tags.indexOf(t) > -1; });
-      var visible = matchesText && matchesTags;
+      var matchesStart = !startDate || (itemDate && itemDate >= startDate);
+      var matchesEnd = !endDate || (itemDate && itemDate <= endDate);
+      var visible = matchesText && matchesTags && matchesStart && matchesEnd;
       card.style.display = visible ? '' : 'none';
       if(visible) shown++;
     });
@@ -142,6 +164,8 @@ function wireHomePostFilter(){
   }
 
   if(input) input.addEventListener('input', apply);
+  if(start) start.addEventListener('change', apply);
+  if(end) end.addEventListener('change', apply);
   tagButtons.forEach(function(btn){
     btn.addEventListener('click', function(){
       var tag = btn.getAttribute('data-tag').toLowerCase();
@@ -155,9 +179,30 @@ function wireHomePostFilter(){
     activeTags.clear();
     tagButtons.forEach(function(b){ b.classList.remove('active'); });
     if(input) input.value = '';
+    if(start) start.value = '';
+    if(end) end.value = '';
     apply();
   });
 
   apply();
+}
+
+// Shared helpers
+function parseDate(value, isEnd){
+  if(!value) return null;
+  // value expected in YYYY-MM-DD
+  var parts = String(value).split('-');
+  if(parts.length !== 3) return null;
+  var year = parseInt(parts[0], 10);
+  var month = parseInt(parts[1], 10) - 1; // zero-based
+  var day = parseInt(parts[2], 10);
+  if(isNaN(year) || isNaN(month) || isNaN(day)) return null;
+  // For end date, set to end of the day to be inclusive
+  if(isEnd) return new Date(year, month, day, 23, 59, 59, 999);
+  return new Date(year, month, day, 0, 0, 0, 0);
+}
+
+function wireDateFilters(){
+  // This function exists so we have a single place to initialize any future shared logic
 }
 
