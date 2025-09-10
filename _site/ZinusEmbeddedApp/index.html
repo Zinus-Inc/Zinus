@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#0FA36B"/>
+
+<title>
+  Shopify App Template - Remix | Zinus Tech Blog
+</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Shopify App Template - Remix | Zinus Tech Blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Shopify App Template - Remix" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Engineering stories and insights from the Zinus team" />
+<meta property="og:description" content="Engineering stories and insights from the Zinus team" />
+<link rel="canonical" href="http://localhost:4000/Zinus/ZinusEmbeddedApp/" />
+<meta property="og:url" content="http://localhost:4000/Zinus/ZinusEmbeddedApp/" />
+<meta property="og:site_name" content="Zinus Tech Blog" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Shopify App Template - Remix" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Engineering stories and insights from the Zinus team","headline":"Shopify App Template - Remix","url":"http://localhost:4000/Zinus/ZinusEmbeddedApp/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="/Zinus/assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="/Zinus/assets/css/main.css">
+
+<!-- Mermaid for diagrams in posts -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'default',
+    securityLevel: 'loose',
+    flowchart: { htmlLabels: false }
+  });
+</script>
+
+
+
+  </head>
+  <body class="site">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+  <div class="container header__inner">
+    <a class="brand" href="/Zinus/" aria-label="Zinus Tech Blog">
+      <span class="brand__mark">Z</span>
+      <span class="brand__name">Zinus Engineering</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary navigation">
+      <ul>
+        
+          <li><a href="http://localhost:4000/Zinus/">Home</a></li>
+        
+          <li><a href="http://localhost:4000/Zinus/posts/">Posts</a></li>
+        
+          <li><a href="http://localhost:4000/Zinus/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<script src="/Zinus/assets/js/site.js" defer></script>
+
+
+
+    <main id="content" class="container">
+      <h1 id="shopify-app-template---remix">Shopify App Template - Remix</h1>
+
+<p>This is a template for building a <a href="https://shopify.dev/docs/apps/getting-started">Shopify app</a> using the <a href="https://remix.run">Remix</a> framework.</p>
+
+<p>Rather than cloning this repo, you can use your preferred package manager and the Shopify CLI with <a href="https://shopify.dev/docs/apps/getting-started/create">these steps</a>.</p>
+
+<p>Visit the <a href="https://shopify.dev/docs/api/shopify-app-remix"><code class="language-plaintext highlighter-rouge">shopify.dev</code> documentation</a> for more details on the Remix app package.</p>
+
+<h2 id="quick-start">Quick start</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Before you begin, you’ll need the following:</p>
+
+<ol>
+  <li><strong>Node.js</strong>: <a href="https://nodejs.org/en/download/">Download and install</a> it if you haven’t already.</li>
+  <li><strong>Shopify Partner Account</strong>: <a href="https://partners.shopify.com/signup">Create an account</a> if you don’t have one.</li>
+  <li><strong>Test Store</strong>: Set up either a <a href="https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store">development store</a> or a <a href="https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store">Shopify Plus sandbox store</a> for testing your app.</li>
+</ol>
+
+<h3 id="setup">Setup</h3>
+
+<p>If you used the CLI to create the template, you can skip this section.</p>
+
+<p>Using yarn:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Using npm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Using pnpm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pnpm <span class="nb">install</span>
+</code></pre></div></div>
+
+<h3 id="local-development">Local Development</h3>
+
+<p>Using yarn:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn dev
+</code></pre></div></div>
+
+<p>Using npm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
+</code></pre></div></div>
+
+<p>Using pnpm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pnpm run dev
+</code></pre></div></div>
+
+<p>Press P to open the URL to your app. Once you click install, you can start development.</p>
+
+<p>Local development is powered by <a href="https://shopify.dev/docs/apps/tools/cli">the Shopify CLI</a>. It logs into your partners account, connects to an app, provides environment variables, updates remote config, creates a tunnel and provides commands to generate extensions.</p>
+
+<h3 id="authenticating-and-querying-data">Authenticating and querying data</h3>
+
+<p>To authenticate and query data you can use the <code class="language-plaintext highlighter-rouge">shopify</code> const that is exported from <code class="language-plaintext highlighter-rouge">/app/shopify.server.js</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">loader</span><span class="p">({</span> <span class="nx">request</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">admin</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">shopify</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">.</span><span class="nx">admin</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">admin</span><span class="p">.</span><span class="nx">graphql</span><span class="p">(</span><span class="s2">`
+    {
+      products(first: 25) {
+        nodes {
+          title
+          description
+        }
+      }
+    }`</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">products</span><span class="p">:</span> <span class="p">{</span> <span class="nx">nodes</span> <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="nx">json</span><span class="p">(</span><span class="nx">nodes</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This template comes preconfigured with examples of:</p>
+
+<ol>
+  <li>Setting up your Shopify app in <a href="https://github.com/Shopify/shopify-app-template-remix/blob/main/app/shopify.server.ts">/app/shopify.server.ts</a></li>
+  <li>Querying data using Graphql. Please see: <a href="https://github.com/Shopify/shopify-app-template-remix/blob/main/app/routes/app._index.tsx">/app/routes/app._index.tsx</a>.</li>
+  <li>Responding to mandatory webhooks in <a href="https://github.com/Shopify/shopify-app-template-remix/blob/main/app/routes/webhooks.tsx">/app/routes/webhooks.tsx</a></li>
+</ol>
+
+<p>Please read the <a href="https://www.npmjs.com/package/@shopify/shopify-app-remix#authenticating-admin-requests">documentation for @shopify/shopify-app-remix</a> to understand what other API’s are available.</p>
+
+<h2 id="deployment">Deployment</h2>
+
+<h3 id="application-storage">Application Storage</h3>
+
+<p>This template uses <a href="https://www.prisma.io/">Prisma</a> to store session data, by default using an <a href="https://www.sqlite.org/index.html">SQLite</a> database.
+The database is defined as a Prisma schema in <code class="language-plaintext highlighter-rouge">prisma/schema.prisma</code>.</p>
+
+<p>This use of SQLite works in production if your app runs as a single instance.
+The database that works best for you depends on the data your app needs and how it is queried.
+You can run your database of choice on a server yourself or host it with a SaaS company.
+Here’s a short list of databases providers that provide a free tier to get started:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Database</th>
+      <th>Type</th>
+      <th>Hosters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MySQL</td>
+      <td>SQL</td>
+      <td><a href="https://www.digitalocean.com/try/managed-databases-mysql">Digital Ocean</a>, <a href="https://planetscale.com/">Planet Scale</a>, <a href="https://aws.amazon.com/rds/aurora/">Amazon Aurora</a>, <a href="https://cloud.google.com/sql/docs/mysql">Google Cloud SQL</a></td>
+    </tr>
+    <tr>
+      <td>PostgreSQL</td>
+      <td>SQL</td>
+      <td><a href="https://www.digitalocean.com/try/managed-databases-postgresql">Digital Ocean</a>, <a href="https://aws.amazon.com/rds/aurora/">Amazon Aurora</a>, <a href="https://cloud.google.com/sql/docs/postgres">Google Cloud SQL</a></td>
+    </tr>
+    <tr>
+      <td>Redis</td>
+      <td>Key-value</td>
+      <td><a href="https://www.digitalocean.com/try/managed-databases-redis">Digital Ocean</a>, <a href="https://aws.amazon.com/memorydb/">Amazon MemoryDB</a></td>
+    </tr>
+    <tr>
+      <td>MongoDB</td>
+      <td>NoSQL / Document</td>
+      <td><a href="https://www.digitalocean.com/try/managed-databases-mongodb">Digital Ocean</a>, <a href="https://www.mongodb.com/atlas/database">MongoDB Atlas</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To use one of these, you can use a different <a href="https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#datasource">datasource provider</a> in your <code class="language-plaintext highlighter-rouge">schema.prisma</code> file, or a different <a href="https://github.com/Shopify/shopify-api-js/blob/main/packages/shopify-api/docs/guides/session-storage.md">SessionStorage adapter package</a>.</p>
+
+<h3 id="build">Build</h3>
+
+<p>Remix handles building the app for you, by running the command below with the package manager of your choice:</p>
+
+<p>Using yarn:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn build
+</code></pre></div></div>
+
+<p>Using npm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
+
+<p>Using pnpm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pnpm run build
+</code></pre></div></div>
+
+<h2 id="hosting">Hosting</h2>
+
+<p>When you’re ready to set up your app in production, you can follow <a href="https://shopify.dev/docs/apps/deployment/web">our deployment documentation</a> to host your app on a cloud provider like <a href="https://www.heroku.com/">Heroku</a> or <a href="https://fly.io/">Fly.io</a>.</p>
+
+<p>When you reach the step for <a href="https://shopify.dev/docs/apps/deployment/web#set-env-vars">setting up environment variables</a>, you also need to set the variable <code class="language-plaintext highlighter-rouge">NODE_ENV=production</code>.</p>
+
+<h3 id="hosting-on-vercel">Hosting on Vercel</h3>
+
+<p>When hosting your Shopify Remix app on Vercel, Vercel uses a fork of the <a href="https://github.com/vercel/remix">Remix library</a>.</p>
+
+<p>To ensure all global variables are set correctly when you deploy your app to Vercel update your app to use the Vercel adapter instead of the node adapter.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span> shopify.server.ts
+<span class="gd">- import "@shopify/shopify-app-remix/adapters/node";
+</span><span class="gi">+ import "@shopify/shopify-app-remix/adapters/vercel";
+</span></code></pre></div></div>
+
+<h2 id="gotchas--troubleshooting">Gotchas / Troubleshooting</h2>
+
+<h3 id="database-tables-dont-exist">Database tables don’t exist</h3>
+
+<p>If you get this error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The table `main.Session` does not exist in the current database.
+</code></pre></div></div>
+
+<p>You need to create the database for Prisma. Run the <code class="language-plaintext highlighter-rouge">setup</code> script in <code class="language-plaintext highlighter-rouge">package.json</code> using your preferred package manager.</p>
+
+<h3 id="navigatingredirecting-breaks-an-embedded-app">Navigating/redirecting breaks an embedded app</h3>
+
+<p>Embedded Shopify apps must maintain the user session, which can be tricky inside an iFrame. To avoid issues:</p>
+
+<ol>
+  <li>Use <code class="language-plaintext highlighter-rouge">Link</code> from <code class="language-plaintext highlighter-rouge">@remix-run/react</code> or <code class="language-plaintext highlighter-rouge">@shopify/polaris</code>. Do not use <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code>.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">redirect</code> helper returned from <code class="language-plaintext highlighter-rouge">authenticate.admin</code>. Do not use <code class="language-plaintext highlighter-rouge">redirect</code> from <code class="language-plaintext highlighter-rouge">@remix-run/node</code></li>
+  <li>Use <code class="language-plaintext highlighter-rouge">useSubmit</code> or <code class="language-plaintext highlighter-rouge">&lt;Form/&gt;</code> from <code class="language-plaintext highlighter-rouge">@remix-run/react</code>. Do not use a lowercase <code class="language-plaintext highlighter-rouge">&lt;form/&gt;</code>.</li>
+</ol>
+
+<p>This only applies if you app is embedded, which it will be by default.</p>
+
+<h3 id="non-embedded">Non Embedded</h3>
+
+<p>Shopify apps are best when they are embedded into the Shopify Admin. This template is configured that way. If you have a reason to not embed your please make 2 changes:</p>
+
+<ol>
+  <li>Change the <code class="language-plaintext highlighter-rouge">isEmbeddedApp</code> prop to false for the <code class="language-plaintext highlighter-rouge">AppProvider</code> in <code class="language-plaintext highlighter-rouge">/app/routes/app.jsx</code></li>
+  <li>Remove any use of App Bridge APIs (<code class="language-plaintext highlighter-rouge">window.shopify</code>) from your code</li>
+  <li>Update the config for shopifyApp in <code class="language-plaintext highlighter-rouge">app/shopify.server.js</code>. Pass <code class="language-plaintext highlighter-rouge">isEmbeddedApp: false</code></li>
+</ol>
+
+<h3 id="oauth-goes-into-a-loop-when-i-change-my-apps-scopes">OAuth goes into a loop when I change my app’s scopes</h3>
+
+<p>If you change your app’s scopes and authentication goes into a loop and fails with a message from Shopify that it tried too many times, you might have forgotten to update your scopes with Shopify.
+To do that, you can run the <code class="language-plaintext highlighter-rouge">deploy</code> CLI command.</p>
+
+<p>Using yarn:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn deploy
+</code></pre></div></div>
+
+<p>Using npm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run deploy
+</code></pre></div></div>
+
+<p>Using pnpm:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pnpm run deploy
+</code></pre></div></div>
+
+<h3 id="my-webhook-subscriptions-arent-being-updated">My webhook subscriptions aren’t being updated</h3>
+
+<p>This template registers webhooks after OAuth completes, using the <code class="language-plaintext highlighter-rouge">afterAuth</code> hook when calling <code class="language-plaintext highlighter-rouge">shopifyApp</code>.
+The package calls that hook in 2 scenarios:</p>
+
+<ul>
+  <li>After installing the app</li>
+  <li>When an access token expires</li>
+</ul>
+
+<p>During normal development, the app won’t need to re-authenticate most of the time, so the subscriptions aren’t updated.</p>
+
+<p>To force your app to update the subscriptions, you can uninstall and reinstall it in your development store.
+That will force the OAuth process and call the <code class="language-plaintext highlighter-rouge">afterAuth</code> hook.</p>
+
+<h3 id="admin-created-webhook-failing-hmac-validation">Admin created webhook failing HMAC validation</h3>
+
+<p>Webhooks subscriptions created in the <a href="https://help.shopify.com/en/manual/orders/notifications/webhooks">Shopify admin</a> will fail HMAC validation. This is because the webhook payload is not signed with your app’s secret key.</p>
+
+<p>Create <a href="https://shopify.dev/docs/api/shopify-app-remix/v1/guide-webhooks">webhook subscriptions</a> using the <code class="language-plaintext highlighter-rouge">shopifyApp</code> object instead.</p>
+
+<p>Test your webhooks with the <a href="https://shopify.dev/docs/apps/tools/cli/commands#webhook-trigger">Shopify CLI</a> or by triggering events manually in the Shopify admin(e.g. Updating the product title to trigger a <code class="language-plaintext highlighter-rouge">PRODUCTS_UPDATE</code>).</p>
+
+<h3 id="incorrect-graphql-hints">Incorrect GraphQL Hints</h3>
+
+<p>By default the <a href="https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql">graphql.vscode-graphql</a> extension for VS Code will assume that GraphQL queries or mutations are for the <a href="https://shopify.dev/docs/api/admin">Shopify Admin API</a>. This is a sensible default, but it may not be true if:</p>
+
+<ol>
+  <li>You use another Shopify API such as the storefront API.</li>
+  <li>You use a third party GraphQL API.</li>
+</ol>
+
+<p>in this situation, please update the <a href="https://github.com/Shopify/shopify-app-template-remix/blob/main/.graphqlrc.ts">.graphqlrc.ts</a> config.</p>
+
+<h3 id="first-parameter-has-member-readable-that-is-not-a-readablestream">First parameter has member ‘readable’ that is not a ReadableStream.</h3>
+
+<p>See <a href="#hosting-on-vercel">hosting on Vercel</a>.</p>
+
+<h3 id="admin-object-undefined-on-webhook-events-triggered-by-the-cli">Admin object undefined on webhook events triggered by the CLI</h3>
+
+<p>When you trigger a webhook event using the Shopify CLI, the <code class="language-plaintext highlighter-rouge">admin</code> object will be <code class="language-plaintext highlighter-rouge">undefined</code>. This is because the CLI triggers an event with a valid, but non-existent, shop. The <code class="language-plaintext highlighter-rouge">admin</code> object is only available when the webhook is triggered by a shop that has installed the app.</p>
+
+<p>Webhooks triggered by the CLI are intended for initial experimentation testing of your webhook configuration. For more information on how to test your webhooks, see the <a href="https://shopify.dev/docs/apps/tools/cli/commands#webhook-trigger">Shopify CLI documentation</a>.</p>
+
+<h3 id="using-defer--await-for-streaming-responses">Using Defer &amp; await for streaming responses</h3>
+
+<p>To test <a href="https://remix.run/docs/en/main/guides/streaming">streaming using defer/await</a> during local development you’ll need to use the Shopify CLI slightly differently:</p>
+
+<ol>
+  <li>First setup ngrok: https://ngrok.com/product/secure-tunnels</li>
+  <li>Create an ngrok tunnel on port 8080: <code class="language-plaintext highlighter-rouge">ngrok http 8080</code>.</li>
+  <li>Copy the forwarding address. This should be something like: <code class="language-plaintext highlighter-rouge">https://f355-2607-fea8-bb5c-8700-7972-d2b5-3f2b-94ab.ngrok-free.app</code></li>
+  <li>In a separate terminal run <code class="language-plaintext highlighter-rouge">yarn shopify app dev --tunnel-url=TUNNEL_URL:8080</code> replacing <code class="language-plaintext highlighter-rouge">TUNNEL_URL</code> for the address you copied in step 3.</li>
+</ol>
+
+<p>By default the CLI uses a cloudflare tunnel. Unfortunately it cloudflare tunnels wait for the Response stream to finish, then sends one chunk.</p>
+
+<p>This will not affect production, since tunnels are only for local development.</p>
+
+<h2 id="benefits">Benefits</h2>
+
+<p>Shopify apps are built on a variety of Shopify tools to create a great merchant experience.</p>
+
+<!-- TODO: Uncomment this after we've updated the docs -->
+<!-- The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app using this template. -->
+
+<p>The Remix app template comes with the following out-of-the-box functionality:</p>
+
+<ul>
+  <li><a href="https://github.com/Shopify/shopify-app-js/tree/main/packages/shopify-app-remix#authenticating-admin-requests">OAuth</a>: Installing the app and granting permissions</li>
+  <li><a href="https://github.com/Shopify/shopify-app-js/tree/main/packages/shopify-app-remix#using-the-shopify-admin-graphql-api">GraphQL Admin API</a>: Querying or mutating Shopify admin data</li>
+  <li><a href="https://github.com/Shopify/shopify-app-js/tree/main/packages/shopify-app-remix#using-the-shopify-admin-rest-api">REST Admin API</a>: Resource classes to interact with the API</li>
+  <li><a href="https://github.com/Shopify/shopify-app-js/tree/main/packages/shopify-app-remix#authenticating-webhook-requests">Webhooks</a>: Callbacks sent by Shopify when certain events occur</li>
+  <li><a href="https://shopify.dev/docs/api/app-bridge">AppBridge</a>: This template uses the next generation of the Shopify App Bridge library which works in unison with previous versions.</li>
+  <li><a href="https://polaris.shopify.com/">Polaris</a>: Design system that enables apps to create Shopify-like experiences</li>
+</ul>
+
+<h2 id="tech-stack">Tech Stack</h2>
+
+<p>This template uses <a href="https://remix.run">Remix</a>. The following Shopify tools are also included to ease app development:</p>
+
+<ul>
+  <li><a href="https://shopify.dev/docs/api/shopify-app-remix">Shopify App Remix</a> provides authentication and methods for interacting with Shopify APIs.</li>
+  <li><a href="https://shopify.dev/docs/apps/tools/app-bridge">Shopify App Bridge</a> allows your app to seamlessly integrate your app within Shopify’s Admin.</li>
+  <li><a href="https://polaris.shopify.com/">Polaris React</a> is a powerful design system and component library that helps developers build high quality, consistent experiences for Shopify merchants.</li>
+  <li><a href="https://github.com/Shopify/shopify-app-js/tree/main/packages/shopify-app-remix#authenticating-webhook-requests">Webhooks</a>: Callbacks sent by Shopify when certain events occur</li>
+  <li><a href="https://polaris.shopify.com/">Polaris</a>: Design system that enables apps to create Shopify-like experiences</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://remix.run/docs/en/v1">Remix Docs</a></li>
+  <li><a href="https://shopify.dev/docs/api/shopify-app-remix">Shopify App Remix</a></li>
+  <li><a href="https://shopify.dev/docs/apps/getting-started">Introduction to Shopify apps</a></li>
+  <li><a href="https://shopify.dev/docs/apps/auth">App authentication</a></li>
+  <li><a href="https://shopify.dev/docs/apps/tools/cli">Shopify CLI</a></li>
+  <li><a href="https://shopify.dev/docs/apps/app-extensions/list">App extensions</a></li>
+  <li><a href="https://shopify.dev/docs/api/functions">Shopify Functions</a></li>
+  <li><a href="https://shopify.dev/docs/apps/best-practices/internationalization/getting-started">Getting started with internationalizing your app</a></li>
+</ul>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© 2025 Zinus, Inc. All rights reserved.</p>
+    <ul class="social">
+      
+        <li><a href="https://github.com/zinus-inc" target="_blank" rel="noopener">GitHub</a></li>
+      
+      
+        <li><a href="https://www.linkedin.com/company/zinus-inc/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+      
+      <li><a href="/Zinus/feed.xml">RSS</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+
+  </body>
+  </html>
+
+

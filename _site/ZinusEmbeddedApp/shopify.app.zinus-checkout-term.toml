@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "d9133d3430908c8bec0bf960c8320a0f"
+name = "zinus-checkout-term"
+handle = "zinus-checkout-term"
+application_url = "https://climbing-retrieved-releases-controllers.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://climbing-retrieved-releases-controllers.trycloudflare.com/auth/callback",
+  "https://climbing-retrieved-releases-controllers.trycloudflare.com/auth/shopify/callback",
+  "https://climbing-retrieved-releases-controllers.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "hlxn-demo.myshopify.com"
+automatically_update_urls_on_dev = true

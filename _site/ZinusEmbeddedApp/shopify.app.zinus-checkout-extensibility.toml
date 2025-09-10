@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "eee8da76a40c04a083d7e476452e6043"
+name = "zinus-checkout-extensibility"
+handle = "zinus-checkout-extensibility"
+application_url = "https://menus-cut-policies-vg.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "zinus-checkout-extensibility.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products, write_delivery_customizations, read_delivery_customizations, read_products"
+
+[auth]
+redirect_urls = [
+  "https://menus-cut-policies-vg.trycloudflare.com/auth/callback",
+  "https://menus-cut-policies-vg.trycloudflare.com/auth/shopify/callback",
+  "https://menus-cut-policies-vg.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+[pos]
+embedded = false

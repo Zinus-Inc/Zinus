@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "6dc20e1b366216921d020f8a1c6e14f1"
+name = "zinus-checkout-app"
+handle = "zinus-checkout-app"
+application_url = "https://msg-affected-trainer-newark.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "zinus-checkout-extensibility.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_delivery_customizations,write_delivery_customizations,write_products,read_products"
+
+[auth]
+redirect_urls = [
+  "https://msg-affected-trainer-newark.trycloudflare.com/auth/callback",
+  "https://msg-affected-trainer-newark.trycloudflare.com/auth/shopify/callback",
+  "https://msg-affected-trainer-newark.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
