@@ -4,12 +4,37 @@ title: "Zinus Embedded App: Remix + Shopify Functions powering checkout experien
 date: 2025-09-10
 tags: [shopify, remix, polaris, prisma, checkout, extensions]
 authors:
-  - name: Zinus Engineering
-    role: Commerce Platform
-    url: https://www.zinus.com
+  - name: "Gabe (Gabriel) Nuñez"
+    role: "Lead Developer (2019–2021)"
+    url: https://www.linkedin.com/in/gabenunez/
+  - name: "Yong Wan Song"
+    role: "Software Engineer (2021–present)"
+    url: https://github.com/yongwansong
+  - name: "Daniel Carroll"
+    role: "Software Engineer (2021–present)"
+    url: https://github.com/DCarrollUSMC
+  - name: "Junkuk (Mason) Kim"
+    role: "DevOps Engineer, Zinus"
+    url: https://www.linkedin.com/in/junkukkim/
 ---
 
-Our Embedded App is a Remix-based Shopify application that centralizes admin UX, data, and a suite of checkout extensions for compliance and conversion. It ships with Polaris UI, Prisma session storage, and multiple UI Extensions that run natively in Shopify Checkout.
+Our Embedded App is a Remix‑based Shopify application that centralizes admin UX, data, and a suite of checkout extensions for compliance and conversion. It ships with Polaris UI, Prisma session storage, and multiple UI Extensions that run natively in Shopify Checkout.
+
+### Timeline & stewardship
+- Started: 2024‑06‑11 · GA build complete: 2024‑09 · Maintenance: ongoing
+- Engineering: Gabe (Gabriel) Nuñez (initial workflows), Yong Wan Song, Daniel Carroll (feature delivery/checkout logic)
+- DevOps/Infra: Junkuk (Mason) Kim (environments, deploys, observability)
+
+### What this app is
+- **Embedded admin app** giving merchants centralized controls (Polaris UI) for settings, feature flags, and extension configuration.
+- **Checkout extensions suite** that executes in Shopify’s secure runtime to enforce policy at point‑of‑purchase without slowing the storefront.
+- **Operational glue** that persists signals (e.g., order attributes) and responds to webhooks with least privilege.
+
+### Why it matters to the business
+- **Compliance at checkout**: contiguous‑states restriction and recycling‑fee logic prevent invalid shipments and ensure state fees are included when required—reducing fines, failed deliveries, and tickets.
+- **Conversion & AOV lift**: configurable countdown/banner and delivery metadata reduce friction and abandonment; fee automation prevents post‑checkout reversals.
+- **Operational efficiency**: order attributes (e.g., Pickup Requested) flow downstream to WAPI/Logistics; admin UI removes manual toggles in theme code; webhooks clean up sessions on uninstall.
+- **Platform safety**: runs with Shopify‑issued session and fine‑grained scopes; no secrets in client; all environment variables injected server‑side only.
 
 ### Stack
 - Remix + Vite (Node ≥16)
@@ -44,6 +69,11 @@ flowchart LR
   end
   Checkout ===> Shopify
 ```
+
+### Security posture
+- No hard‑coded secrets in the repo; environment variables (e.g., `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `SCOPES`, `SHOPIFY_APP_URL`) are read at runtime.
+- Webhooks validate via the framework’s adapter; session data stored via Prisma‑backed storage.
+- Extensions read product data via GraphQL using the authenticated context, avoiding browser‑exposed access tokens.
 
 ### Checkout extensions
 
@@ -96,6 +126,11 @@ query(`query { product(id: "${productId}") { variants(first: 25) { edges { node 
 - Keep `ApiVersion` aligned with current Admin API; update `restResources` accordingly
 - Prisma session DB must be shared across instances (SQLite only OK for single instance)
 - Extensions should fail “closed” (block or remove lines) to protect compliance
+
+### Business outcomes (selected)
+- Fewer invalid orders to non‑contiguous states; decreased shipping exceptions.
+- Higher completion rate on regulated carts (fees pre‑added) and fewer post‑purchase adjustments.
+- Faster merchant ops via UI‑based configuration instead of code edits.
 
 ### Why this matters
 By pairing an embedded admin app with checkout-native extensions, we deliver merchant control and strict checkout enforcement without slowing down the storefront. Compliance flows (like recycling fees and shipping restrictions) run client-side within Shopify’s secure runtime; data-heavy or cross-system tasks stay server-side in the app.
