@@ -1,0 +1,18 @@
+# Build output
+_site/
+
+# Ruby/Bundler
+vendor/
+Gemfile.lock
+
+# Node
+node_modules/
+
+# Local analysis code (not part of site)
+Wonder-Server/
+ZinusEmbeddedApp/
+
+# Misc
+.DS_Store
+Thumbs.db
+
