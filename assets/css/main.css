@@ -51,7 +51,7 @@ body{
 
 /* Posts */
 .section-title{font-size:20px;margin:32px 0 12px}
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (max-width:980px){.post-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.post-grid{grid-template-columns:1fr}}
 .post-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
