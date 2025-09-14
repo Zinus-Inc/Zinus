@@ -97,4 +97,33 @@ body{
 .post-item{display:flex;align-items:center;gap:8px}
 .tag-list-inline .tag{margin-left:6px}
 
+/* Global responsive safeguards */
+html,body{overflow-x:hidden}
+img,svg,video,canvas,iframe,embed,object{max-width:100%;height:auto}
+
+/* Prevent long words/URLs from causing overflow */
+.post-card,.post__content,.post-card__title a{overflow-wrap:anywhere;word-break:break-word}
+
+/* Home controls: make search input responsive like posts page */
+#home-post-search{flex:1 1 260px;max-width:420px;padding:8px 10px;border:1px solid var(--border);border-radius:8px}
+
+/* Ensure hr inside flex wraps to full line without overflow */
+.post-controls hr{flex-basis:100%;width:100%;border:0;border-top:1px solid var(--border);margin:6px 0 0}
+
+/* Small-screen tweaks */
+@media (max-width:640px){
+  .hero__title{font-size:34px}
+  .header__inner{flex-wrap:wrap}
+  .footer__inner{flex-wrap:wrap}
+}
+
+/* Additional mobile overflow fixes */
+.post-item{flex-wrap:wrap}
+.post-item a{overflow-wrap:anywhere;word-break:break-word}
+
+@media (max-width:760px){
+  .header__inner{height:auto;flex-wrap:wrap}
+  .nav{width:100%}
+}
+
 
