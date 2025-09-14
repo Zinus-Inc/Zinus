@@ -4,9 +4,15 @@ title: "CS-Portal-Cloud: SAP‑integrated CS portal and ConversationIQ analytics
 date: 2025-09-14
 tags: [sap, nodejs, express, react, auth0, security, analytics, kustomer]
 authors:
-  - name: "Yong Wan Song"
-    role: "Software Engineer (2021–present)"
-    url: https://github.com/yongwansong
+  - name: "Gabe (Gabriel) Nuñez"
+    role: "Lead Developer (Sep–Dec 2021)"
+    url: https://www.linkedin.com/in/gabenunez/
+  - name: "Junkuk (Mason) Kim"
+    role: "DevOps Engineer, Zinus (2022–present)"
+    url: https://www.linkedin.com/in/junkukkim/
+  - name: "Joshua Cortez"
+    role: "US Sales, Zinus (from Oct 2025)"
+    url: "#"
 ---
 
 ### What is CS‑Portal‑Cloud?
@@ -26,27 +32,32 @@ authors:
 - **Public API**: API key via `x-api-key` or query; 60 rpm limiter.
 - **ConversationIQ**: Express + Vite, Drizzle ORM (PostgreSQL), Zod, React 18 UI, Kustomer proxy.
 
+### Project timeline & ownership
+- **Sep 2021 → Dec 2021**: Initial development completed; developed by Gabe (Gabriel) Nuñez.
+- **Jan 2022 → Sep 2025**: Continuous enhancements and maintenance by Junkuk (Mason) Kim.
+- **Oct 2025 →**: Planned integration of ConversationIQ and other in‑house AI applications into CS‑Portal; team: Junkuk (Mason) Kim and Joshua Cortez (Zinus US Sales).
+
 ### High‑level architecture
-<div class="mermaid">
+```mermaid
 flowchart LR
   subgraph Web[CS-Portal-Cloud]
-    A[Agent Browser (React)] -->|JWT cookie-session| B[Express Server]
-    E[Partner System] -->|API key| B
-    B --> C[Auth + Security\nhelmet, hpp, rate-limit]
-    C --> D1[/Agent Routes\n/api/agent/*/]
-    C --> D2[/Public Routes\n/api/public/*/]
-    C --> D3[/SAP RFC Proxy\n/api/sap-rfc]
-    D3 --> R[node-rfc Client]
-    R -->|DEV/PRD creds| S[(SAP ECC/NW RFC)]
+    A["Agent Browser (React)"] --> B["Express Server"]
+    E["Partner System"] --> B
+    B --> C["Auth + Security (helmet, hpp, rate-limit)"]
+    C --> D1["Agent Routes /api/agent/*"]
+    C --> D2["Public Routes /api/public/*"]
+    C --> D3["SAP RFC Proxy /api/sap-rfc"]
+    D3 --> R["node-rfc Client"]
+    R --> S["SAP ECC/NW RFC"]
   end
 
   subgraph ConvIQ[ConversationIQ]
-    A2[Browser (React 18)] --> B2[Express+Vite Server]
-    B2 --> C2[/API /api/*/]
-    C2 --> D2a[(Postgres via Drizzle)]
-    C2 --> KAPI[Kustomer API Proxy]
+    A2["Browser (React 18)"] --> B2["Express+Vite Server"]
+    B2 --> C2["API /api/*"]
+    C2 --> D2a["Postgres via Drizzle"]
+    C2 --> KAPI["Kustomer API Proxy"]
   end
-</div>
+```
 
 ### Security model (CS‑Portal)
 - **Transport**: Typically behind Nginx/443; Node listens on internal HTTP (e.g., 1818). Helmet + HPP enabled.
