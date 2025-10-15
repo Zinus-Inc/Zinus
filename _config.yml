@@ -49,5 +49,6 @@ exclude:
   - Gemfile.lock
   - Wonder-Server
   - ZinusEmbeddedApp
+  - plans
 
 

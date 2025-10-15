@@ -1,19 +1,4 @@
-﻿---
-title: 2025 진행 중 프로젝트 요약 - Mason Kim
-date: 2025-10-15
-owner: Mason Kim
-description: 연간 프로젝트 진행 현황과 Keetsa 마이그레이션 계획 보고서 요구사항 반영
-tags:
-  - plan
-  - roadmap
-  - keetsa
-  - automation
-  - devops
-  - bi
-  - security
----
-
-## 📌 Mason Kim 진행 중 프로젝트 요약 (업데이트 반영)
+﻿## 📌 Mason Kim 진행 중 프로젝트 요약 (업데이트 반영)
 
 ### 1. 🛒 E-Commerce 플랫폼 개선 프로젝트
 
@@ -21,27 +6,10 @@ tags:
 - 목표: 기존 커스텀 Shopify 테마를 → 공식 Dawn 테마로 전환
 - 마감 기한: 2026년 2월 말
 - 담당자: Mason Kim
-- 이번 주 제출 예정: Keetsa 마이그레이션 프로젝트 계획 보고서
+- 제출 완료: Keetsa 마이그레이션 프로젝트 계획 보고서 (리더십 검토 완료)
 
-##### 📄 보고서에 포함될 주요 내용
-- 기술적 준비 항목
-  - Dawn 테마의 Liquid 구조 및 Section 기반 빌딩 시스템 이해
-  - 기존 테마에서 사용 중인 앱, 커스텀 코드, Metafield 구조 분석
-  - Dawn과 호환되지 않는 레거시 코드 및 3rd-party 앱 식별
-- 데이터 이전 계획
-  - 기존 제품 페이지, 컬렉션, 고객 리뷰, 블로그 콘텐츠 등 구조 유지
-  - Metafield 데이터 마이그레이션 전략 수립
-  - 스크립팅/GraphQL API를 활용한 구조화된 자동 이전
-- 현실적인 소요 기간 산정
-  - UX/UI 디자인 적용: 2~3주
-  - Dawn 기반 테마 커스터마이징: 2~3주
-  - 콘텐츠 이전 자동화/QA: 2주
-  - 크로스브라우저 + 모바일 QA: 1주
-  - 런칭 및 사후 모니터링: 1주
-- 위험 요소 및 완화 전략
-  - ADA 접근성 손실 리스크 → Allyant 자동 검사 도구 선적용
-  - 앱 호환성 문제 → Dawn 호환 가능한 앱 사전 검증
-  - SEO 순위 하락 → 기존 URL 유지 및 리디렉션 전략 포함
+##### 📄 보고서
+- 상세 내용은 링크된 문서를 참고해 주세요: [Keetsa Shopify Dawn Theme Migration Plan (EN)](./2025-keetsa-dawn-migration-plan-en.md)
 
 ---
 
