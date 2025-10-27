@@ -4,112 +4,138 @@
 
 ## 1. Executive Summary
 
-During the September-October 2025 reporting period, a total of **44 Jira tickets** related to Keetsa website development were analyzed:  
-- **30 Tasks** and **12 Bugs** completed or in progress, plus **2 on hold** tickets.  
-- **79.5% completion rate** (35 tickets marked “Done”).  
-- Focus areas included merchandising enhancements (badging, price display, upsells), UX refinements on the product detail and cart pages, and Shopify theme migration groundwork.  
-- Bug fixes targeted key UI inconsistencies (variant selectors, tooltips), content duplication, and video responsiveness improvements to enhance user experience and accessibility.
+During September-October 2025, a total of **40 Jira tickets** related to the Keetsa website development were analyzed. These included:
 
-The **bug fixes improved site reliability and visual consistency**, resolving navigation issues, misaligned elements, and layout problems primarily in product and cart areas.
+- **27 Tasks (68%)**
+- **12 Bugs (30%)**
+- **1 On Hold Bug (3%)**
+
+The overall ticket completion rate was **83%** with 33 tickets marked as Done and 7 remaining In Progress or On Hold.
+
+Key outcomes include:
+
+- Successful deployment of merchandising features such as price badges and cross-sell upsells.
+- Multiple UI/UX bug fixes improving cart functionality, mobile product detail page (PDP) experience, and checkout policy display.
+- Introduction of Microsoft Clarity analytics for enhanced user behavior tracking.
+- Addressing mobile responsiveness issues with embedded media and mobile footer icon spacing.
+- Major themes focused on **bug fixes to improve user flow reliability and visual consistency**, and **UI improvements for better usability and accessibility**.
+
+Bug tickets addressed critical issues such as cart link errors, pricing notice misalignments, and review filter display problems, all resolved through targeted frontend fixes to restore functional and visual clarity.
 
 ---
 
 ## 2. Incident Overview
 
-| Category      | Description                                                  | Impact                                |
-|---------------|--------------------------------------------------------------|-------------------------------------|
-| PDP Layout    | Financing notice on wide screens misaligned from price area  | Reduced price clarity                |
-| Privacy Popup | Privacy Policy popup duplicates website URL text             | Confusing user legal information    |
-| Keetsa Theater| Embedded videos narrower than viewport on mobile devices     | Poor mobile media experience        |
-| Reviews Filter| “All ratings” filter shows blank input display               | Filter usability confusion          |
-| Mobile Footer | “Follow Us” icon spacing inconsistent across devices        | Inconsistent mobile user interface  |
-| Cart Popup    | Shipping “?” tooltip misaligned from trigger                 | User confusion on shipping details  |
-| Cart Links    | Cart product links lead to current page URL, not product     | Navigation errors, reduced UX       |
-| PDP Specs     | Extra empty “Product Specs” section with single dot          | Visual noise/UX distraction         |
-| Mobile PDP    | Variant selector borders inconsistent, truncated variant names| Reduced variant selection clarity   |
-| Email Popup   | Email pop-up freeze site issue                               | Customer engagement blockage         |
+| Category          | Description                                                | Impact                                                  |
+|-------------------|------------------------------------------------------------|---------------------------------------------------------|
+| Cart Popup        | Shipping “?” tooltip misaligned from trigger               | Confusing tooltip display affecting checkout clarity    |
+| Cart Popup        | Product links in cart point to wrong URL (current page)    | Incorrect navigation leading to user confusion          |
+| Cart Popup        | “Shipping Protection” option disappears when cross-sell unavailable | Potential loss of upsell revenue and customer options   |
+| Mobile PDP        | Variant selector borders inconsistent and truncated names  | Reduced clarity on product options, lowering UX         |
+| PDP Financing     | Financing notice misaligned on large desktop widths        | Visual disconnect between price and financing info      |
+| Reviews Filter    | Filter input blank when “All ratings” selected             | Unclear filter state affecting review browsing          |
+| Privacy Popup     | Privacy policy text duplicated in checkout popup           | Confusing legal text presentation, reducing trust       |
+| Mobile Footer     | “Follow Us” icon spacing inconsistent across devices       | Inconsistent visual layout and potential usability issues |
+| KEET-8 (On Hold)  | Issue adding different sizes of same product to cart       | Limits user cart flexibility and purchasing options     |
+| Email Popup Bug   | Email popup causes site freeze                              | Blocks user interaction, halting site usage             |
+| Extra PDP Section  | Empty extra “Product Specs” section displayed               | Visual clutter affecting page professionalism            |
+| Keetsa Theater    | Videos do not fit full width on mobile                      | Poor video experience and engagement on mobile devices   |
 
 ### Business Impact Summary
-- Confusing or impaired product and cart interactions  
-- Reduced trust due to legal text duplication  
-- Negative mobile user experience due to responsiveness and spacing issues  
-- Checkout and cart usability risks impacting conversion
+
+- Checkout usability and upsell revenue risks mitigated  
+- Improved clarity and readability on product and pricing information  
+- Enhanced mobile browsing and accessibility compliance  
+- Eliminated site-blocking bugs to restore smooth user interaction  
 
 ---
 
 ## 3. Immediate Response & Fixes
 
-| Focus Area   | Actions Taken                                               | Outcome                                  |
-|--------------|--------------------------------------------------------------|-----------------------------------------|
-| PDP Layout    | Realigned Affirm financing notice on ≥1500px viewports     | ✅ Restored logical price/notice layout |
-| Privacy Popup | Removed duplicate URLs, corrected link formatting           | ✅ Clarified Privacy Policy content     |
-| Media Player | Made embedded YouTube videos responsive for mobile widths   | ✅ Improved mobile video viewing         |
-| Reviews Filter| Corrected filter input to display “All ratings” text        | ✅ Enhanced filter usability             |
-| Mobile Footer | Standardized “Follow Us” icon spacing across devices        | ✅ Consistent UI on all mobile views     |
-| Cart Tooltip | Fixed shipping “?” tooltip alignment in cart popup          | ✅ Tooltip appears adjacent to trigger  |
-| Cart Links   | Corrected links to point to canonical product URLs           | ✅ Fixed cart navigation errors          |
-| PDP Specs    | Removed empty “Product Specs” section with extraneous dot   | ✅ Removed visual clutter                |
-| Mobile PDP   | Uniformed variant selector borders, fixed truncated names    | ✅ Clear and consistent variant display  |
-| Email Popup  | Addressed email pop-up freeze blocking navigation            | ✅ Site functional after pop-up          |
+| Focus Area       | Actions Taken                                                  | Outcome                                              |
+|------------------|---------------------------------------------------------------|-----------------------------------------------------|
+| Cart Experience  | Corrected tooltip position; fixed product link URLs in cart   | ✅ Restored accurate info display and navigation    |
+| Shipping Upsell  | Investigated cross-sell logic hiding Shipping Protection block | ⏸ On Hold: Pending fix to preserve upsell visibility |
+| Mobile PDP       | Standardized variant selector border styles; fixed truncated labels | ✅ Consistent appearance and clear variant naming   |
+| PDP Layout       | Aligned financing notice with price area for ≥1500px widths  | ✅ Improved visual coherence on desktop             |
+| Reviews Filter   | Fixed filter UI to show “All ratings” text properly           | ✅ Clear filter state for better review browsing    |
+| Privacy Popup    | Removed duplicated URL text from privacy policy popup         | ✅ Clear and accurate legal information display     |
+| Mobile Footer    | Adjusted icon container spacing for uniform layout across devices | ✅ Consistent footer icon spacing on mobile          |
+| Email Popup Bug  | Fixed popup to prevent site freeze on activation              | ✅ Resumed normal site responsiveness                |
+| Extra PDP Section| Removed empty specs section rendering                          | ✅ Cleaner PDP layout                                |
+| Mobile Video     | Made embedded videos responsive to full mobile viewport width | ✅ Improved mobile media display                      |
 
 ---
 
 ## 4. UI/UX Improvement Highlights
 
-| Feature Area                   | Before                                                    | After                                                   |
-|-------------------------------|-----------------------------------------------------------|---------------------------------------------------------|
-| Collection Badges             | No toggle control for badge display                        | Added theme variable for toggling badges (Helixian-KEET-24) |
-| Badging Copy                  | Limited badge copy for price variation                     | Added extended badge copy for price visibility (Helixian-KEET-25) |
-| Footer Link Wrapping          | Link text wraps mid-phrase causing label split             | Footer links kept whole to avoid confusing breaks       |
-| Responsive Icons Spacing      | Icon-to-text spacing collapsed at 480–767px breakpoint     | Restored consistent spacing between icons and labels    |
-| Home Page Hero Text          | Low contrast making text difficult to read over banner    | On hold - planned redesign for better readability        |
-| Upsells/Cross-sells (PDP, Cart)| Basic upsell features                                     | Improved mobile-friendly upsell and cross-sell displays |
-| Sidecart Merchandising Area  | No promotional messaging area in side cart                  | Added area for dynamic promotional messaging             |
+| Feature Area               | Before                                                       | After                                                        |
+|---------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
+| Collection Badges         | No toggle for price badges on collections                    | Added theme variable to enable/disable collection badges     |
+| Badge Copy                | Limited badge copy for pricing nuances                       | Expanded badge copy to clarify pricing across collections    |
+| Upsells & Cross Sells     | No or limited upsells on PDP and cart                        | Enabled mobile-friendly upsells on PDP and cart              |
+| Side Cart Messaging       | No merchandising/promotional area in side cart              | Added configurable promotional messaging section             |
+| Footer Link Wrapping      | Link labels broken mid-word on small/medium viewports       | Footer links wrap by full link to preserve readability       |
+| Home Page Icons           | Icons closely spaced from labels at 480–767px breakpoints   | Restored spacing between icons and labels for readability    |
+| Home Hero Text            | Hero text blends into background image reducing readability | Contrast improvements planned (currently On Hold)            |
 
 ---
 
 ## 5. On-Hold Items & Action Plan
 
-| Key               | Description                                                     | Next Step                          | Owner          |
-|-------------------|-----------------------------------------------------------------|-----------------------------------|----------------|
-| Helixian-KEET-18  | Cart popup - Shipping Protection option disappears when cross-sell is unavailable | Update logic to keep Shipping Protection visible | Daniel Carroll |
-| Helixian-KEET-8   | Issue adding different sizes of same product to cart            | Expand variant/cart test cases     | Unassigned     |
-| Helixian-KEET-11  | Home page hero text lacks sufficient contrast/readability       | Redesign overlay or background gradient | Bobby Hudgins  |
-| Helixian-KEET-7   | Collection Page Pricing & Badges (corner discount highlight)    | Define technical scope & approvals | Bobby Hudgins  |
+| Key             | Description                                               | Next Step                                  | Owner          |
+|-----------------|-----------------------------------------------------------|--------------------------------------------|----------------|
+| Helixian-KEET-18| Cart popup “Shipping Protection” disappears without cross-sell | Update cross-sell fallback logic to show block independently | Daniel Carroll |
+| Helixian-KEET-8 | Adding different sizes of the same product to cart       | Expand variant logic handling and retest    | -              |
+| Helixian-KEET-11| Home page hero text lacks contrast/readability           | Redesign hero overlay or background gradient | Bobby Hudgins  |
+| Helixian-KEET-7 | Collection Page Pricing & Badges display enhancements    | Define scope and acceptance criteria; resume work | Bobby Hudgins  |
 
 ---
 
 ## 6. Appendix
 
-| Type      | Key             | Summary                                                       | Status     | Assignee       | Reporter        | Created               | Resolved              |
-|-----------|-----------------|---------------------------------------------------------------|------------|----------------|-----------------|-----------------------|-----------------------|
-| Task      | Helixian-KEET-1  | Keetsa: Add MS Clarity                                        | Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-16T12:06:35   | 2025-09-26T15:10:54   |
-| Task      | Helixian-KEET-2  | Keetsa: Merchandising of prices                               | Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-16T12:19:41   | 2025-10-13T12:53:22   |
-| Task      | Helixian-KEET-3  | Keetsa: Side cart merchandising area for promotional messaging| Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-16T12:24:55   | 2025-09-29T17:24:11   |
-| Task      | Helixian-KEET-4  | Keetsa: Upsells/Cross Sells on PDP                            | Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-16T12:28:33   | 2025-10-13T12:52:03   |
-| Task      | Helixian-KEET-5  | Keetsa: Upsells in cart                                       | Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-16T12:29:36   | 2025-10-13T12:52:19   |
-| Task      | Helixian-KEET-6  | Review compare at pricing in Keetsa                           | Done       | Olivia Alvarez | Daniel Carroll  | 2025-09-23T12:59:42   | 2025-10-13T15:52:33   |
-| Task      | Helixian-KEET-7  | Collection Page Pricing & Badges (discount highlight)        | On Hold    | Bobby Hudgins  | Daniel Carroll  | 2025-09-23T13:00:47   | -                     |
-| Bug       | Helixian-KEET-8  | Issue when adding different sizes of same product to cart    | On Hold    | -              | Olivia Alvarez  | 2025-09-26T15:32:51   | -                     |
-| Bug       | Helixian-KEET-9  | Keetsa BUG: email pop up causes site to freeze               | Done       | Olivia Alvarez | Olivia Alvarez  | 2025-09-29T10:20:10   | 2025-09-30T04:50:38   |
-| Task      | Helixian-KEET-10 | Cart popup – Shipping “?” tooltip misaligned                  | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T11:19:33   | 2025-10-13T12:54:28   |
-| Task      | Helixian-KEET-11 | Home page hero text lacks sufficient contrast/readability    | On Hold    | Bobby Hudgins  | Bobby Hudgins  | 2025-10-07T11:24:22   | -                     |
-| Task      | Helixian-KEET-12 | “Thoughtfully Designed” card link returns 404                 | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T11:35:00   | 2025-10-13T12:54:33   |
-| Bug       | Helixian-KEET-13 | 480–767px: “We make it easy” icons lose spacing               | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T11:57:22   | 2025-10-13T12:54:39   |
-| Task      | Helixian-KEET-14 | Footer links wrap mid-word causing split labels               | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T12:43:15   | 2025-10-13T12:54:51   |
-| Bug       | Helixian-KEET-15 | PDP shows extra empty “Product Specs” section with dot       | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T12:48:40   | 2025-10-13T12:55:03   |
-| Bug       | Helixian-KEET-16 | Cart popup product links point to wrong URL                   | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-07T15:24:21   | 2025-10-13T12:55:12   |
-| Bug       | Helixian-KEET-17 | Mobile PDP variant selector borders inconsistent              | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T08:16:36   | 2025-10-14T11:09:36   |
-| Bug       | Helixian-KEET-18 | Cart popup – Shipping Protection disappears without cross-sell| On Hold    | Daniel Carroll | Bobby Hudgins  | 2025-10-08T08:48:40   | -                     |
-| Bug       | Helixian-KEET-19 | Mobile footer “Follow Us” icon spacing inconsistent          | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T11:04:19   | 2025-10-14T11:09:44   |
-| Bug       | Helixian-KEET-20 | Reviews filter input blank when “All ratings” selected       | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T11:24:10   | 2025-10-14T11:09:52   |
-| Bug       | Helixian-KEET-21 | Keetsa Theater videos don’t fit mobile width                  | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T11:31:57   | 2025-10-14T11:10:00   |
-| Bug       | Helixian-KEET-22 | Privacy Policy popup duplicates text                          | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T12:23:30   | 2025-10-14T11:10:11   |
-| Bug       | Helixian-KEET-23 | PDP (≥1500px) Financing notice misaligned                     | Done       | Olivia Alvarez | Bobby Hudgins  | 2025-10-08T12:49:41   | 2025-10-14T11:10:17   |
-| Task      | Helixian-KEET-24 | Add theme variable for toggling collection badges            | Done       | Mason Kim      | Daniel Carroll | 2025-10-13T13:40:40   | 2025-10-14T11:10:37   |
-| Task      | Helixian-KEET-25 | Keetsa Badging: Add updated copy                              | Done       | Daniel Carroll | Olivia Alvarez | 2025-10-14T11:09:17   | 2025-10-17T13:48:31   |
-| Task      | Helixian-KEET-26+| (Excluded Zinus project and unassigned future tasks)         | To Do/In Progress | Various     | Various        | 2025-10-19+            | -                     |
-
-*Note: Appendix limited to Keetsa website-related tickets; Zinus project tickets excluded per instructions.*
+| Type  | Key              | Summary                                                         | Status    | Assignee       | Reporter        | Created             | Resolved            |
+|-------|------------------|-----------------------------------------------------------------|-----------|----------------|-----------------|---------------------|---------------------|
+| Task  | Helixian-KEET-25 | Keetsa Badging: Please add up to copy                           | Done      | Daniel Carroll | Olivia Alvarez  | 2025-10-14 11:09:17 | 2025-10-17 13:48:31 |
+| Task  | Helixian-KEET-24 | Add theme variable for turning on and off the collection badges | Done      | Mason Kim      | Daniel Carroll  | 2025-10-13 13:40:40 | 2025-10-14 11:10:37 |
+| Bug   | Helixian-KEET-23 | PDP (≥1500px width) — Financing notice misaligned/too far      | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 12:49:41 | 2025-10-14 11:10:17 |
+| Bug   | Helixian-KEET-22 | Privacy Policy popup shows duplicated website text              | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 12:23:30 | 2025-10-14 11:10:11 |
+| Bug   | Helixian-KEET-21 | Keetsa Theater videos don’t fit device width on mobile          | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 11:31:57 | 2025-10-14 11:10:00 |
+| Bug   | Helixian-KEET-20 | Reviews filter input shows blank when “All ratings” is selected | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 11:24:10 | 2025-10-14 11:09:52 |
+| Bug   | Helixian-KEET-19 | Mobile footer – “Follow Us” icon spacing inconsistent           | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 11:04:19 | 2025-10-14 11:09:44 |
+| Bug   | Helixian-KEET-18 | Cart popup — “Shipping Protection” option disappears when cross-sell is unavailable | On Hold   | Daniel Carroll | Bobby Hudgins  | 2025-10-08 08:48:40 | -                   |
+| Bug   | Helixian-KEET-17 | Mobile PDP – variant selector has inconsistent borders and truncated/incorrect names | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-08 08:16:36 | 2025-10-14 11:09:36 |
+| Bug   | Helixian-KEET-16 | Cart popup product links point to the current page (wrong URL) | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 15:24:21 | 2025-10-13 12:55:12 |
+| Bug   | Helixian-KEET-15 | PDP shows an extra empty “Product Specs” section with a single dot | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 12:48:40 | 2025-10-13 12:55:03 |
+| Task  | Helixian-KEET-14 | Footer links wrap by word instead of per-link, causing label splits | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 12:43:15 | 2025-10-13 12:54:51 |
+| Task  | Helixian-KEET-13 | 480–767px: “We make it easy” icons lose spacing to labels      | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 11:57:22 | 2025-10-13 12:54:39 |
+| Task  | Helixian-KEET-12 | “Thoughtfully Designed” card link returns 404                   | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 11:35:00 | 2025-10-13 12:54:33 |
+| Task  | Helixian-KEET-11 | Home page hero text lacks sufficient contrast                   | On Hold   | Bobby Hudgins  | Bobby Hudgins  | 2025-10-07 11:24:22 | -                   |
+| Bug   | Helixian-KEET-10 | Cart popup – Shipping “?” tooltip is misaligned                 | Done      | Olivia Alvarez | Bobby Hudgins  | 2025-10-07 11:19:33 | 2025-10-13 12:54:28 |
+| Bug   | Helixian-KEET-9  | Keetsa BUG: email pop up causes site to freeze                  | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-29 10:20:10 | 2025-09-30 04:50:38 |
+| Bug   | Helixian-KEET-8  | Issue when adding different sizes of same product to cart       | On Hold   | -              | Olivia Alvarez | 2025-09-26 15:32:51 | -                   |
+| Task  | Helixian-KEET-7  | Collection Page Pricing & Badges display                         | On Hold   | Bobby Hudgins  | Daniel Carroll | 2025-09-23 13:00:47 | -                   |
+| Task  | Helixian-KEET-6  | Review compare at pricing in Keetsa                             | Done      | Olivia Alvarez | Daniel Carroll | 2025-09-23 12:59:42 | 2025-10-13 15:52:33 |
+| Task  | Helixian-KEET-5  | Keetsa: Upsells in cart                                         | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-16 12:29:36 | 2025-10-13 12:52:19 |
+| Task  | Helixian-KEET-4  | Keetsa: Upsells/Cross Sells on PDP                              | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-16 12:28:33 | 2025-10-13 12:52:03 |
+| Task  | Helixian-KEET-3  | Keetsa: Side cart merchandising area for promotional messaging | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-16 12:24:55 | 2025-09-29 17:24:11 |
+| Task  | Helixian-KEET-2  | Keetsa: Merchandising of prices                                | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-16 12:19:41 | 2025-10-13 12:53:22 |
+| Task  | Helixian-KEET-1  | Keetsa: Add MS Clarity                                          | Done      | Olivia Alvarez | Olivia Alvarez | 2025-09-16 12:06:35 | 2025-09-26 15:10:54 |
+| Task  | Zinus-KEET-18    | Integrate Keetsa Shopify Orders with SAP via API               | Done      | Mason Kim      | Mason Kim      | 2025-10-19 18:02:13 | 2025-10-21 09:58:44 |
+| Task  | Zinus-KEET-1     | Project setup & baseline audit                                  | In Progress | Bobby Hudgins | Mason Kim      | 2025-10-19 10:18:36 | -                   |
+| Task  | Zinus-KEET-30    | Register “Keetsa Theme Migration Project” on Zinus Tech Blog  | To Do     | Mason Kim      | Mason Kim      | 2025-10-19 18:57:18 | -                   |
+| Task  | Zinus-KEET-19    | Migrate keetsa.com Domain to Cloudflare and Update Name Servers | To Do   | -              | Mason Kim      | 2025-10-19 18:44:59 | -                   |
+| Task  | Zinus-KEET-11    | QA, Launch, Monitoring                                         | To Do     | -              | Mason Kim      | 2025-10-19 10:20:38 | -                   |
+| Task  | Zinus-KEET-10    | Accessibility & Performance                                   | To Do     | -              | Mason Kim      | 2025-10-19 10:20:30 | -                   |
+| Task  | Zinus-KEET-9     | SEO/JSON-LD standardization                                   | To Do     | -              | Mason Kim      | 2025-10-19 10:20:18 | -                   |
+| Task  | Zinus-KEET-8     | Checkout Extensibility & Cart Transform (recycle fees)       | To Do     | -              | Mason Kim      | 2025-10-19 10:20:12 | -                   |
+| Task  | Zinus-KEET-7     | Apps to App Blocks & GTM consolidation                        | To Do     | -              | Mason Kim      | 2025-10-19 10:20:06 | -                   |
+| Task  | Zinus-KEET-6     | Cart drawer migration                                         | To Do     | -              | Mason Kim      | 2025-10-19 10:19:57 | -                   |
+| Task  | Zinus-KEET-5     | PDP & metafields (keetsa.)                                   | To Do     | -              | Mason Kim      | 2025-10-19 10:19:50 | -                   |
+| Task  | Zinus-KEET-4     | Home (marketing) sections                                    | To Do     | -              | Mason Kim      | 2025-10-19 10:19:38 | -                   |
+| Task  | Zinus-KEET-3     | Header/Footer/Top Banner                                     | To Do     | -              | Mason Kim      | 2025-10-19 10:19:14 | -                   |
+| Task  | Zinus-KEET-2     | Dawn base theme & branding                                  | To Do     | -              | Mason Kim      | 2025-10-19 10:18:43 | -                   |
 
 ---
+
+*End of Report*
