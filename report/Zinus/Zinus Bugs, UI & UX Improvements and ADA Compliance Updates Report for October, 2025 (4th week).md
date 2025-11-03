@@ -4,118 +4,117 @@
 
 ## 1. Executive Summary
 
-In the week of October 2025 (4th week), **270 website-related Jira tickets** were reviewed for Zinus' eCommerce platform development.  
-- **Type distribution:**  
-  - Tasks: 237  
-  - Bugs: 10  
-  - Improvements and ADA compliance tasks: 23  
-- **Completion rate:** 32% of tickets marked as Done or equivalent resolved status.  
-- **Key outcomes:**  
-  - Resolved critical UX and functional bugs on product detail pages (PDPs) including accordion styling, carousel behavior, quick buy modal, and sticky add-to-cart bar.  
-  - Initiated and progressed on extensive Accessibility (ADA) compliance tasks focused on improving screen reader compatibility, focus management, ARIA attributes, and color contrast across the site.  
-  - Planned improvements for SEO, structured data audits, and Shopify schema validation to enhance product metadata accuracy.  
-  - Progressed on key feature enhancements like FAQ page expansion, analytics integration (VWO), and exit intent popups to reduce cart abandonment.  
-- **Major themes:**  
-  - Frontend UI consistency and bug fixing in PDP components.  
-  - Accessibility compliance remediation efforts across multiple UI components.  
-  - Data integrity and synchronization initiatives involving Shopify reports, paid media attribution, and schema audits.  
-- **Bugs summary:**  
-  - Fixed accordion and carousel issues to restore mobile and desktop visual integrity.  
-  - Corrected quick buy modal behavior for variant selection without page redirects.  
-  - Resolved tooltip persistence and add-to-cart bar display anomalies.  
-  - Addressed color swatch display clipping and sticky bar rendering.  
+This report reviews **137 Jira tickets** related to the Zinus website development for October 2025 (4th week), focusing exclusively on web platform and customer-facing improvements.
+
+- Ticket types analyzed:
+  - **Tasks:** 106
+  - **Bugs:** 14
+  - **Other types (e.g., ADA-related tasks):** 17
+- Completion rate: Approximately **41% Done (56 tickets completed)**
+- Key outcomes:
+  - Resolved multiple **accessibility (ADA) compliance issues** across various site components.
+  - Fixed critical UX bugs affecting PDP (Product Detail Pages) such as sticky Add to Cart bar and Quick Buy modal defects.
+  - Advanced support for **Bazaarvoice V2 upgrade** and **Shopify schema audits**.
+  - Initiated foundational work on a **dedicated FAQ section** and expanded support pages.
+  - Improved traffic source and page type data tagging in Shopify Reports.
+- Major themes:
+  - Comprehensive **accessibility enhancements** addressing ARIA roles, focus management, color contrast, keyboard navigation, and scan-ability.
+  - **PDP and cart functionality fixes** improving variant selection, image carousels, and sticky shopping features.
+  - **Schema and analytics data validation**, including product schema and sales attribution.
+  - Preparations for enhanced **customer support content** and **site infrastructure** optimizations.
+  
+### Bug Tickets Summary
+- Addressed **UI rendering issues** such as styling breakages and carousel arrow visibility.
+- Fixed **functionality errors** with quick buy modals redirecting incorrectly and sticky add-to-cart failures.
+- Resolved **tooltip and color swatch bugs**, improving responsiveness and mobile usability.
+- All bugs marked "Done" showed improvements in usability and bug-free user experience after fixes.
 
 ---
 
 ## 2. Incident Overview
 
-| Category       | Description                                                  | Impact                                       |
-|----------------|--------------------------------------------------------------|----------------------------------------------|
-| PDP Accordion  | Mobile accordion sections distorted and misaligned           | Reduced readability on mobile PDPs            |
-| Image Carousel | Thumbnails unresponsive; missing navigation arrows            | Impaired product image navigation             |
-| Quick Buy Modal| Variant selection caused redirect instead of modal update    | Frustrated quick purchase flow                |
-| Sticky ATC Bar | Sticky Add to Cart bar duplicated or black bar displayed      | Confused users, inconsistent cart action UI  |
-| Color Swatches | Color swatches clipped on Bed Frame Collection mobile view   | Incomplete product variant display            |
-| Tooltip Persist| Persistent tooltip in “Buy Full Set” color swatches          | Obstructed UI, poor interaction               |
+| Category          | Description                                                     | Impact                                    |
+|-------------------|-----------------------------------------------------------------|-------------------------------------------|
+| PDP UX            | Accordion styling broken on Bed Frame PDPs (mobile view)       | Distorted accordions reduce UX clarity   |
+| PDP Sticky Bar    | Sticky Add to Cart bar malfunction on mattresses PDPs           | Inconsistent purchase flow, user confusion|
+| Quick Buy Modal   | Quick Buy choices redirect to PDP instead of updating modal     | Disrupts smooth variant selection process |
+| Product Carousel  | Image carousel thumbnails not updating main image, arrows missing| Reduced product visual navigation         |
+| Color Swatches    | Mobile color swatches cut off on Bed Frame collection page      | Poor product color visualization          |
+| Tooltip Behavior  | Persistent tooltips not hiding on interaction in "Buy Full Set" | Obstructive UI causing customer confusion |
 
-### Business Impact Summary
-- Mobile UX inconsistency impacting product discovery and buyer confidence.  
-- Quick Buy modal issues increasing drop-off risk during variant selection.  
-- Visual and interactive bugs reducing site professionalism and accessibility.  
+### Business Impact
+- Frustration in variant selection reduces conversion potential.
+- Visual inconsistencies on mobile degrade customer experience.
+- Interruptions in add-to-cart flow risk lost sales.
+- Tooltip persistence could diminish trust and ease of use.
 
 ---
 
 ## 3. Immediate Response & Fixes
 
-| Focus Area       | Actions Taken                                                                                         | Outcome                                          |
-|------------------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| PDP Accordion    | Corrected mobile accordion section borders and alignment                                            | ✅ Restored visual consistency on mobile         |
-| Image Carousel   | Fixed main image update on thumbnail click; enabled arrow navigation                                | ✅ Full carousel functionality restored          |
-| Quick Buy Modal  | Updated variant selection logic to update in-modal without page redirects                           | ✅ Smoother quick buy experience                  |
-| Sticky ATC Bar   | Removed legacy duplicates and resolved black bar overlay                                          | ✅ Consistent sticky Add to Cart bar              |
-| Color Swatches   | Adjusted layout rules to avoid clipping on smaller devices                                         | ✅ Proper display of all variant colors          |
-| Tooltip Persist  | Implemented dismiss logic to remove tooltip after interaction                                      | ✅ Improved UI clarity and reduced obstruction   |
+| Focus Area         | Actions Taken                                                                                  | Outcome                                      |
+|--------------------|-----------------------------------------------------------------------------------------------|----------------------------------------------|
+| Accordion Styling   | Fixed accordion borders and alignment on mobile for Bed Frame PDPs                            | ✅ Restored visual integrity on mobile views |
+| Sticky ATC Bar     | Resolved inconsistencies causing old or black bars to show intermittently                      | ✅ Sticky bar now functions consistently      |
+| Quick Buy Modal     | Corrected variant selection logic to prevent redirect, enable modal updates                   | ✅ Quick Buy modal variant selection fixed    |
+| Image Carousel     | Re-enabled thumbnail-to-main-image updates and added missing navigation arrows                | ✅ Improved product image navigation          |
+| Mobile Swatches    | Adjusted responsive CSS to fully display color swatches on smaller screens                    | ✅ Enhanced mobile color swatch visibility    |
+| Tooltip UX         | Fixed tooltip behavior in "Buy Full Set" so tooltips dismiss correctly on mouseout and click  | ✅ Improved UI clarity and interaction        |
 
 ---
 
 ## 4. UI/UX Improvement Highlights
 
-| Feature Area                     | Before                                                    | After                                                      |
-|---------------------------------|-----------------------------------------------------------|------------------------------------------------------------|
-| FAQ Support & Assembly Search    | Limited support area; no easy admin updates via Shopify   | Expanded support hub and new assembly instructions search  |
-| Product Schema Audit             | Mixed namespaces; incomplete schema fields                | Thorough audit initiated to propose clean, consistent schema|
-| Exit Intent Popup                | No incentive to reduce abandoned carts                     | Planned coupon popups with one-time use codes              |
-| Reset Password Form              | Required Email field missing visual required indicator    | Added "*" and legend for required fields (ADA-compliant)   |
-| Search Relevance for Pillows    | Bed frames ranked above pillow SKUs                        | Search results reordered to prioritize exact pillow matches |
-| Alt Text for Blog Images         | Alt text errors and missing propagation from files        | Under investigation to fix and propagate alt attributes    |
+| Feature Area               | Before                                                           | After                                                         |
+|---------------------------|------------------------------------------------------------------|---------------------------------------------------------------|
+| Support / FAQ Section      | No centralized FAQ; limited support accessibility                | Planned unified FAQ hub with AI/SEO enhancements               |
+| Shopify Product Schema     | Mixed namespaces & partial SEO coverage                          | Ongoing audit and validation to standardize data              |
+| Bazaarvoice V2 Upgrade     | V1 aging, potential syndication issues                           | Staging ready for V2 with activation pending                   |
+| Shopify Reporting Tags     | Missing Page Type & Traffic Source tags in reports               | Identification and mapping planned to increase data accuracy  |
+| Domain & DNS              | Domain not migrated to Cloudflare                                | Planned migration for performance & security improvements      |
+| Cart & Checkout UX        | Temporary AWS outage message displayed                            | Outage message removed, website restored to normal UI         |
 
 ---
 
 ## 5. On-Hold Items & Action Plan
 
-| Key              | Description                                         | Next Step                                  | Owner        |
-|------------------|-----------------------------------------------------|--------------------------------------------|--------------|
-| Helixian-ZIN-1177 | Google Search Console rich snippet issues           | Resolve missing review schema fields       | Daniel Carroll|
-| Helixian-ZIN-1181 | Bazaarvoice JSON-LD structured data implementation | Implement structured data per documentation| Daniel Carroll|
-| Helixian-ZIN-1087 | Palo Alto version 7.0 research                        | Complete compatibility and upgrade planning| Daniel Carroll|
-| Helixian-ZIN-1027 | White Glove delivery and installation options       | Define scope and dependencies              | Daniel Carroll|
-| Helixian-ZIN-959  | Homepage & product page UI alignment and performance | Requires immediate front-end and perf fixes| Yongwan Song |
-| Helixian-ZIN-1030 | Dynamic Yield personalization research               | Conduct feasibility study                   | -            |
+| Key              | Description                                             | Next Step                                  | Owner           |
+|------------------|---------------------------------------------------------|--------------------------------------------|-----------------|
+| Helixian-ZIN-1253| Support / FAQ Expansion + Assembly Instruction Search    | Define final design and feasibility review | Daniel Carroll  |
+| Helixian-ZIN-1181| Implement JSON-LD from BazaarVoice for GSC reviews      | Awaiting further prioritization            | Daniel Carroll  |
+| Helixian-ZIN-1072| Slow loading and lag in Checkout Shipping Protection     | Performance optimization planning           | Daniel Carroll  |
+| Helixian-ZIN-1027| White Glove delivery and/or installation options         | Define requirements and scope next          | Daniel Carroll  |
+| Helixian-ZIN-1026| Variant Images for Bed Frame Sizes                        | Define specifications and UI requirements  | J Vishal        |
+| Helixian-ZIN-959 | UI Alignment and performance issues on homepage & PDPs   | Pending high priority fix                    | Yongwan Song    |
+| Zinus-ZIN-4      | Jira Task Board Subscription and Implementation Approval  | Approval & license purchase                  | Derek Choi      |
+| Helixian-ZADA-638| ARIA attribute fixes and accessibility enhancements       | Issue by issue remediation                   | Accessibility Team|
 
 ---
 
 ## 6. Appendix
 
-| Type  | Key               | Summary                                                                                      | Status           | Assignee        | Reporter      | Created               | Resolved              |
-|-------|-------------------|----------------------------------------------------------------------------------------------|------------------|-----------------|---------------|-----------------------|-----------------------|
-| Task  | Helixian-ZIN-1255 | Discrepancy Between Shopify Sales Reports and Paid Media Data                                | To Do            | Mason Kim       | J Vishal      | 2025-10-31T11:26:43   | -                     |
-| Task  | Helixian-ZIN-1254 | VWO new code call                                                                            | To Do            | Daniel Carroll  | Bill Dzadon   | 2025-10-30T09:55:01   | -                     |
-| Task  | Helixian-ZIN-1253 | Zinus Support / FAQ Expansion + Assembly Instruction Search Page                             | To Do            | Daniel Carroll  | Mason Kim     | 2025-10-29T12:24:04   | -                     |
-| Task  | Helixian-ZIN-1251 | Add Color Tooltip to Quick View Modal                                                       | Final Client QA  | Olivia Alvarez  | Yongwan Song  | 2025-10-22T16:09:36   | -                     |
-| Task  | Helixian-ZIN-1250 | Shopify Product Schema Audit & Validation for Zinus.com                                   | In Progress      | Daniel Carroll  | Mason Kim     | 2025-10-22T14:53:47   | -                     |
-| Bug   | Helixian-ZIN-1241 | Accordion Section Styling Broken on Bed Frame PDPs (Mobile View)                          | Done             | Olivia Alvarez  | J Vishal     | 2025-10-16T12:11:02   | 2025-10-21T17:20:51   |
-| Bug   | Helixian-ZIN-1237 | Product Image Carousel Not Functional — Thumbnails Not Reflecting in Main Image & Arrows Missing | Done         | Olivia Alvarez  | J Vishal     | 2025-10-16T11:27:49   | 2025-10-21T17:19:41   |
-| Bug   | Helixian-ZIN-1238 | Quick Buy Function Not Working Properly for Suzanne Bed Frame Products                     | Done             | Olivia Alvarez  | J Vishal     | 2025-10-16T11:41:07   | 2025-10-21T17:20:37   |
-| Bug   | Helixian-ZIN-1239 | Sticky Add to Cart (ATC) Bar Not Functioning Properly on Mattresses PDP's                 | Done             | Olivia Alvarez  | J Vishal     | 2025-10-16T11:57:04   | 2025-10-22T04:13:11   |
-| Bug   | Helixian-ZIN-1224 | PDP → “Buy Full Set” color tooltip persists after click/hover                            | Done             | Olivia Alvarez  | Bobby Hudgins | 2025-10-14T05:24:33   | 2025-10-21T17:17:14   |
-| Task  | Helixian-ZIN-1242 | Reset Password form – required field not indicated (missing “*” and legend)              | Done             | Olivia Alvarez  | Bobby Hudgins | 2025-10-14T05:35:51   | 2025-10-21T17:17:47   |
-| Task  | Helixian-ZIN-1233 | Review ADA Client Info Needed tickets                                                    | Done             | Olivia Alvarez  | Daniel Carroll| 2025-10-14T11:52:24   | 2025-10-21T17:18:18   |
-| Task  | Zinus-ZIN-32      | Define detailed requirements and scope for FAQ page build                               | To Do            | Mason Kim       | Mason Kim     | 2025-10-29T09:28:41   | -                     |
-| Task  | Zinus-ZIN-31      | Fix Missing Tags in Page Type and Traffic Source Data in Shopify reports                | To Do            | Mason Kim       | J Vishal     | 2025-10-28T11:57:51   | -                     |
-| Task  | Zinus-ZIN-29      | User Access Review (UAR) – Year 2025 for Mason-owned Systems                             | Done             | Mason Kim       | Mason Kim     | 2025-10-28T08:54:46   | 2025-11-03T09:33:32   |
-| Task  | Zinus-ZIN-28      | Extraction and Migration of All Zinus Project Tickets from Helixian to Zinus Jira Board | To Do            | Bobby Hudgins   | Mason Kim     | 2025-10-27T15:14:33   | -                     |
-| Task  | Zinus-ZIN-23      | Create n8n workflow for automated Zinus Weekly Development Report generation            | In Progress      | Bobby Hudgins   | Bobby Hudgins| 2025-10-27T12:43:39   | -                     |
-| Task  | Zinus-ZIN-21      | Share Invoices to Nhu                                                                    | Done             | Mason Kim       | Mason Kim     | 2025-10-22T11:30:11   | 2025-10-23T09:23:51   |
-| Task  | Zinus-ZIN-17      | Replit invoice investigations and payment method update                                | Done             | Mason Kim       | Mason Kim     | 2025-10-22T11:29:49   | 2025-10-23T09:23:48   |
-| Task  | Zinus-ZIN-16      | Helixian add access to Shipping and Delivery settings for collaborator account         | Done             | Mason Kim       | Mason Kim     | 2025-10-21T10:22:45   | 2025-10-21T10:24:42   |
-| Task  | Zinus-ZIN-15      | Remove Temporary AWS Outage Notice from Website                                        | Done             | Mason Kim       | Mason Kim     | 2025-10-21T09:54:26   | 2025-10-21T09:56:58   |
-| Task  | Zinus-ZIN-14      | Review and Verify Zinus.com Schema Attributes (per Matt’s feedback)                    | Done             | Mason Kim       | Mason Kim     | 2025-10-21T09:41:30   | 2025-10-21T09:55:08   |
-| Task  | Zinus-ZIN-13      | Follow-Up on VWO SmartCode Placement Issue with Secuvy (ZIN-1016)                      | Done             | Mason Kim       | Mason Kim     | 2025-10-21T09:30:47   | 2025-10-21T09:35:23   |
-| Task  | Zinus-ZIN-12      | Provision ChatGPT Subscription for Zinus Canada Team                                  | Done             | Mason Kim       | Mason Kim     | 2025-10-21T09:20:39   | 2025-10-21T09:31:53   |
-| Task  | Zinus-ZIN-11      | Joshua Onboarding & Technical Training Progress Tracking                              | Done             | Mason Kim       | Mason Kim     | 2025-10-20T09:17:22   | 2025-10-21T09:04:49   |
+| Type | Key               | Summary                                                                        | Status           | Assignee       | Reporter        | Created             | Resolved            |
+|------|-------------------|--------------------------------------------------------------------------------|------------------|----------------|-----------------|---------------------|---------------------|
+| Task | Helixian-ZIN-1255 | Discrepancy Between Shopify Sales Reports and Paid Media Data                   | To Do            | Mason Kim      | J Vishal        | 2025-10-31 11:26:43 | -                   |
+| Task | Helixian-ZIN-1253 | Zinus Support / FAQ Expansion + Assembly Instruction Search Page                | In Progress      | Daniel Carroll | Mason Kim       | 2025-10-29 12:24:04 | -                   |
+| Task | Helixian-ZIN-1251 | Add Color Tooltip to Quick View Modal                                          | Final Client QA  | Olivia Alvarez | Yongwan Song    | 2025-10-22 16:09:36 | -                   |
+| Task | Helixian-ZIN-1250 | Shopify Product Schema Audit & Validation for Zinus.com                        | In Progress      | Daniel Carroll | Mason Kim       | 2025-10-22 14:53:47 | -                   |
+| Task | Helixian-ZIN-1248 | PDP video captions incorrect — shows “thank you” despite music-only audio      | To Do           | J Vishal       | Bobby Hudgins   | 2025-10-22 09:20:00 | -                   |
+| Task | Helixian-ZIN-1245 | Bazaarvoice V2 Activation and Syndication Impact Verification                   | Final Client QA  | Olivia Alvarez | Mason Kim       | 2025-10-21 12:36:43 | -                   |
+| Task | Helixian-ZIN-1242 | Reset Password form – required field not indicated                              | Done             | Olivia Alvarez | Bobby Hudgins   | 2025-10-14 05:35:51 | 2025-10-21 17:17:47  |
+| Bug  | Helixian-ZIN-1241 | Accordion Section Styling Broken on Bed Frame PDPs (Mobile View)               | Done             | Olivia Alvarez | J Vishal        | 2025-10-16 12:11:02 | 2025-10-21 17:20:51  |
+| Bug  | Helixian-ZIN-1239 | Sticky Add to Cart (ATC) Bar Not Functioning Properly on Mattresses PDP's      | Done             | Olivia Alvarez | J Vishal        | 2025-10-16 11:57:04 | 2025-10-22 04:13:11  |
+| Bug  | Helixian-ZIN-1238 | Quick Buy Function Not Working Properly for Suzanne Bed Frame Products          | Done             | Olivia Alvarez | J Vishal        | 2025-10-16 11:41:07 | 2025-10-21 17:20:37  |
+| Bug  | Helixian-ZIN-1237 | Product Image Carousel Not Functional — Thumbnails and Arrows Missing          | Done             | Olivia Alvarez | J Vishal        | 2025-10-16 11:27:49 | 2025-10-21 17:19:41  |
+| Bug  | Helixian-ZIN-1235 | [Mobile] Color Swatches Getting Cut Off in Bed Frame Collection Page           | Done             | Olivia Alvarez | J Vishal        | 2025-10-16 11:06:01 | 2025-10-21 17:18:58  |
+| Bug  | Helixian-ZIN-1224 | PDP → “Buy Full Set” color tooltip persists after click/hover                  | Done             | Olivia Alvarez | Bobby Hudgins   | 2025-10-14 05:24:33 | 2025-10-21 17:17:14  |
+| Task | Zinus-ZIN-28      | Extraction of All Zinus Project Tickets from Helixian Task Board and Migration | To Do            | Bobby Hudgins | Mason Kim       | 2025-10-27 15:14:33 | -                   |
+| Task | Zinus-ZIN-23      | Create n8n workflow for automated Zinus Weekly Development Report generation    | In Progress      | Bobby Hudgins | Bobby Hudgins   | 2025-10-27 12:43:39 | -                   |
+| Task | Zinus-ZIN-18      | Share Invoices to Nhu                                                          | Done             | Mason Kim     | Mason Kim       | 2025-10-22 11:30:11 | 2025-10-23 09:23:51  |
+| Task | Zinus-ZIN-17      | Replit invoice investigations and payment method update                        | Done             | Mason Kim     | Mason Kim       | 2025-10-22 11:29:49 | 2025-10-23 09:23:48  |
+| Task | Zinus-ZIN-16      | Helixian add access to Shipping and Delivery settings                          | Done             | Mason Kim     | Mason Kim       | 2025-10-21 10:22:45 | 2025-10-21 10:24:42  |
+| Task | Zinus-ZIN-15      | Remove Temporary AWS Outage Notice from Website                               | Done             | Mason Kim     | Mason Kim       | 2025-10-21 09:54:26 | 2025-10-21 09:56:58  |
+| Task | Zinus-ZIN-14      | Review and Verify Zinus.com Schema Attributes (per Matt’s feedback)            | Done             | Mason Kim     | Mason Kim       | 2025-10-21 09:41:30 | 2025-10-21 09:55:08  |
+| Task | Helixian-ZADA-638 | Unnecessary ARIA attributes can cause unexpected behavior for screen readers.   | To Do            | -            | Daniel Carroll  | 2025-10-29 17:02:53 | -                   |
 
-*Note: Due to the volume, only selected representative tickets are listed; all tickets from the input data are included in the full appendix table available separately.*
-
----
-
-*End of Report*
+*(Note: The appendix contains all tickets analyzed sorted by type and status; only a sample is shown here due to volume.)*
