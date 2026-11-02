@@ -5,59 +5,61 @@
 
 ## **1. Executive Summary**
 
-During October 2026, the Keetsa eCommerce website underwent significant improvements focused on **cart functionality, product page usability, accessibility, SEO, security, and Shopify integrations**. Of the **76 Jira tickets reviewed, 61 were directly relevant to website development and maintenance**, with **26 completed (42.6%)** and 35 remaining in various stages of development, review, or planning.
+During October 2026, the Keetsa eCommerce platform underwent targeted **bug fixes, checkout improvements, accessibility enhancements, SEO optimizations, and storefront security updates**. Development focused on improving shopping reliability, correcting product information, enhancing mobile usability, and preparing the website for future Shopify upgrades.
+
+A total of **76 Jira tickets** were analyzed, including current development activities and previously created tickets that remained open during the reporting period.
 
 ### Development Overview
 
-| Metric | Count |
-|--------|-------|
-| Total Jira Tickets Analyzed | 76 |
-| Website-Related Tickets | 61 |
-| Tasks | 46 |
-| Bugs | 12 |
-| Stories | 1 |
-| Epics | 2 |
-| ✅ Completed | 26 |
-| Pending / In Progress / QA / On Hold | 35 |
-| **Completion Rate** | **42.6%** |
+| Metric | Count | Percentage |
+|---------|-------|------------|
+| Total Jira Tickets | 76 | 100% |
+| Tasks | 59 | 77.6% |
+| Bugs | 12 | 15.8% |
+| Epics | 4 | 5.3% |
+| Stories | 1 | 1.3% |
+| ✅ Completed | 26 | 34.2% |
+| Pending / Under Review | 50 | 65.8% |
 
-*Completion rate is calculated using website-related tickets. Non-website operational and administrative tasks are excluded from development metrics.*
+**Note:** Completion statistics cover all 76 supplied tickets, including older backlog and operational items. The development highlights focus on website-related activities. Completion is based on Jira's "Done" status.
 
-### Key Development Highlights
+### Key Development Achievements
 
-| Focus Area | Key Achievements | Status |
-|------------|------------------|--------|
-| Cart & Checkout | Fixed incorrect cart totals, empty-cart states, and failed add-to-cart handling | ✅ Completed |
-| Product Pages | Improved mattress diagrams, variant visibility, and product layouts | ✅ Completed |
-| Accessibility | Improved keyboard navigation, heading structure, and text contrast | ✅ Completed |
-| SEO & Structured Data | Corrected product pricing metadata, page titles, and image tags | ✅ Completed |
-| Product Recommendations | Fixed Rebuy recommendations involving unavailable products | ✅ Completed |
-| Collection Pages | Updated mattress collection templates and product listings | ✅ Completed |
-| Pricing Accuracy | Corrected discount information displayed on accessories | ✅ Completed |
-| Security | Pentest remediation and discount-code reviews progressing | 🔄 Ongoing |
-| Shopify Upgrade | Customer accounts and Dawn theme upgrade undergoing client review | 🔄 Ongoing |
-| Product Bundles | Development pending integration, recycling-fee, and review-system validation | ⏸ On Hold |
+| Focus Area | Key Outcomes |
+|------------|--------------|
+| **Cart & Checkout** | ✅ Fixed cart totals, empty-cart behavior, and failed Add to Cart handling. |
+| **Product Pages** | ✅ Improved mattress diagrams, product variants, and mobile presentation. |
+| **SEO Optimization** | ✅ Corrected product pricing metadata, duplicate titles, and image markup. |
+| **Accessibility** | ✅ Improved keyboard navigation, text contrast, and heading structure. |
+| **Search Experience** | ✅ Restored predictive search submission functionality. |
+| **Product Merchandising** | ✅ Corrected collection templates and inaccurate accessory discount displays. |
+| **Third-Party Integrations** | ✅ Addressed Rebuy product availability and cart synchronization issues. |
+| **Compliance** | ✅ Completed Connecticut recycling fee update to $19.50. |
 
-### Bug Fix Summary
+### Bug Resolution Summary
 
-**12 bug tickets were identified, of which 9 were completed (75%).**
+**12 bug tickets were tracked: 9 completed, 2 awaiting final client QA, and 1 on hold.**
 
-- **Cart calculations:** Fixed Rebuy cart totals that failed to refresh after adding products.
-- **Empty-cart behavior:** Corrected cart displays that remained empty or appeared blank after add-to-cart actions.
-- **Inventory validation:** Addressed Rebuy recommendations and bundles involving sold-out products.
-- **Add-to-cart errors:** Improved error handling for network failures and sticky cart interactions.
-- **Search functionality:** Restored predictive search submission using mouse and keyboard.
-- **SEO metadata:** Removed duplicate brand names from page titles.
-- **PDP layout:** Two responsive layout issues remain under final client QA.
-- **Shipping Protection:** An existing cart-drawer visibility issue remains on hold.
+- **Cart pricing:** Corrected stale totals after adding Rebuy recommendations.
+- **Cart display:** Fixed missing line items and blank cart drawer states.
+- **Product availability:** Addressed sold-out products appearing in Rebuy recommendations.
+- **Add to Cart:** Improved error visibility when cart requests fail.
+- **Search:** Restored search submission through predictive search suggestions.
+- **SEO:** Removed duplicate brand names from page titles.
+- **Product accessibility:** Improved product badge announcements for screen readers.
+- **Mobile navigation:** Horizontal menu scrolling fix awaits final client QA.
+- **Tablet PDP:** Stock status wrapping fix awaits final client QA.
+- **Shipping Protection:** Existing visibility issue remains on hold.
 
 ### Major Development Themes
 
-- Improved shopping reliability and checkout consistency.
-- Better mobile usability and responsive product layouts.
-- Stronger accessibility and SEO compliance.
-- More accurate product pricing and inventory information.
-- Continued Shopify modernization and security improvements.
+October development primarily addressed:
+
+1. **Shopping Experience:** More reliable cart interactions and product selection.
+2. **Accessibility:** Better keyboard navigation, readability, and screen-reader support.
+3. **SEO & Performance:** Improved structured data, metadata, and responsive images.
+4. **Security:** Penetration-test remediation and dependency management.
+5. **Platform Modernization:** Preparation for Shopify theme and customer account upgrades.
 
 ---
 
@@ -66,189 +68,195 @@ During October 2026, the Keetsa eCommerce website underwent significant improvem
 ### Key Issues Identified
 
 | Category | Description | Impact |
-|----------|-------------|--------|
-| Cart Totals | Rebuy additions did not refresh estimated cart totals. | Pricing confusion and reduced checkout trust |
-| Cart Display | Rebuy additions to empty carts did not display new items. | Customers could not see added products |
-| Product Availability | Rebuy recommended products and variants that were sold out. | Failed purchases and inventory inconsistencies |
-| Frequently Bought Together | Sold-out products caused bundle additions to fail silently. | Lost cross-sell opportunities |
-| Add to Cart | Network failures produced no visible error message. | Customers received no purchase failure feedback |
-| Sticky Add to Cart | Error messages appeared outside the visible screen. | Customers could miss purchase errors |
-| Predictive Search | The "Search for" option did not submit queries. | Reduced search functionality |
-| SEO Titles | Page titles contained duplicate Keetsa brand names. | Lower-quality search result presentation |
-| Mattress Layers | Empty product descriptions created unnecessary spacing. | Inconsistent product page appearance |
-| Mobile PDP | Stock status wrapped incorrectly at tablet widths. | Reduced product availability readability |
-| Mobile Navigation | Open navigation drawer allowed horizontal scrolling. | Poor mobile navigation experience |
-| Shipping Protection | Protection option disappeared without cross-sell products. | Potential loss of protection sales |
+|-----------|--------------|--------|
+| Cart Pricing | Rebuy additions did not refresh estimated cart totals. | Pricing confusion during checkout. |
+| Cart Display | Rebuy additions to empty carts did not display new products. | Customers could not see added items. |
+| Cart Availability | Rebuy recommended unavailable products and variants. | Failed purchases and inventory confusion. |
+| Cart Drawer | Failed Add to Cart requests could leave an empty drawer blank. | Confusing shopping experience. |
+| Add to Cart | Network failures did not display an error message. | Customers received no failure feedback. |
+| Sticky Cart | Sticky Add to Cart errors appeared outside the visible screen. | Customers could miss purchase errors. |
+| Product Recommendations | Sold-out products caused bundle additions to fail. | Interrupted cross-sell purchases. |
+| Product Accessibility | Product badges were missing from accessible link names. | Reduced screen-reader information. |
+| Search | Predictive search submission option did not work. | Interrupted product discovery. |
+| SEO | Page titles displayed the Keetsa brand name twice. | Reduced search-result presentation quality. |
+| Product Content | Empty mattress description fields created unnecessary spacing. | Inconsistent product page layouts. |
+| Mobile Navigation | Menu drawer allowed unwanted horizontal scrolling. | Reduced mobile navigation usability. |
+| Tablet PDP | Stock status text split incorrectly at tablet widths. | Reduced stock information readability. |
+| Cart Protection | Shipping Protection disappeared without cross-sell products. | Reduced protection availability. |
 
-### Business Impact Summary
+### Business Impact
 
-- Incorrect cart information could reduce customer confidence.
-- Failed cart actions increased purchase abandonment risk.
-- Sold-out recommendations created unsuccessful purchase attempts.
-- Mobile layout issues reduced shopping convenience.
-- Search defects made product discovery less reliable.
+- Inconsistent cart totals reduced pricing clarity.
+- Sold-out recommendations increased purchase failure risk.
+- Missing error messages made checkout issues harder to understand.
+- Mobile layout issues reduced browsing convenience.
 - Accessibility issues affected keyboard and screen-reader users.
-- Shipping Protection visibility remained an unresolved revenue risk.
+- SEO inconsistencies weakened product information quality.
+
+**Resolution Status:** Nine bugs were completed during October. Two remain in final client QA, and one remains on hold.
 
 ---
 
 ## **3. Immediate Response & Fixes**
 
-### Completed Bug Fixes
-
 | Focus Area | Actions Taken | Outcome |
-|------------|---------------|---------|
-| Cart Totals | Updated cart synchronization after Rebuy product additions. | ✅ Accurate cart totals |
-| Empty Cart | Corrected cart item visibility after Rebuy additions. | ✅ Products displayed correctly |
-| Rebuy Availability | Addressed sold-out product and variant recommendations. | ✅ Improved inventory consistency |
-| FBT Recommendations | Corrected sold-out product handling and card badge accessibility. | ✅ More reliable recommendations |
-| Cart Error Handling | Added visible error messaging for failed network requests. | ✅ Clearer purchase feedback |
-| Sticky Add to Cart | Improved error visibility after failed sticky-bar additions. | ✅ Better error communication |
-| Predictive Search | Restored search form submission from dropdown selections. | ✅ Functional search navigation |
-| SEO Page Titles | Corrected duplicate brand-name suffixes in page titles. | ✅ Cleaner search metadata |
-| Mattress Layers | Prevented empty descriptions from creating unwanted spacing. | ✅ Improved page consistency |
+|-------------|----------------|----------|
+| **Cart Totals** | Updated cart footer synchronization after Rebuy additions. | ✅ Accurate estimated totals |
+| **Empty Cart Display** | Synchronized cart item visibility with updated cart contents. | ✅ Products display correctly |
+| **Product Availability** | Addressed sold-out recommendations and unavailable variants. | ✅ Improved purchase reliability |
+| **Cart Drawer** | Preserved the empty-cart state when product additions fail. | ✅ Restored empty-cart display |
+| **Add to Cart Errors** | Added visible error handling for failed network requests. | ✅ Improved error feedback |
+| **Sticky Add to Cart** | Addressed error messages appearing outside the viewport. | ✅ Improved error visibility |
+| **Rebuy Bundles** | Addressed sold-out products blocking bundle additions. | ✅ Improved bundle availability handling |
+| **Product Accessibility** | Updated product badge references for assistive technology. | ✅ Improved screen-reader support |
+| **Predictive Search** | Restored form submission from the search suggestion option. | ✅ Search submission restored |
+| **SEO Titles** | Corrected case-sensitive brand-name checks in page titles. | ✅ Removed duplicate brand suffixes |
+| **Mattress Content** | Prevented empty description fields from adding blank spacing. | ✅ Cleaner product layouts |
+| **Mobile Menu** | Addressed unwanted horizontal scrolling behavior. | ⏳ Final client QA pending |
+| **Tablet PDP** | Addressed wrapping of stock status and delivery information. | ⏳ Final client QA pending |
+| **Shipping Protection** | Fix remains pending for cross-sell-dependent visibility. | ⏸ On Hold |
 
-### Pending Bug Fixes
+### Additional Technical Improvements
 
-| Focus Area | Required Action | Current Status |
-|------------|-----------------|----------------|
-| Tablet PDP | Prevent stock availability text from splitting across lines. | 🔄 Final Client QA |
-| Mobile Navigation | Prevent horizontal scrolling in the open menu drawer. | 🔄 Final Client QA |
-| Shipping Protection | Keep protection options visible without cross-sell products. | ⏸ On Hold |
-
-*Completed outcomes reflect Jira resolution status. Tickets in Final Client QA have not yet been marked Done.*
+| Area | Fix Implemented | Result |
+|------|-----------------|--------|
+| Product Pricing | Corrected product schema and Open Graph pricing. | ✅ More accurate product metadata |
+| Product Images | Corrected malformed responsive image attributes. | ✅ Improved image markup |
+| Collection Images | Fixed invalid product-card image source sets. | ✅ Improved responsive image support |
+| Product Sharing | Optimized social sharing image metadata. | ✅ Improved link preview configuration |
+| Product Schema | Addressed duplicate structured product entities. | ✅ Improved structured data consistency |
 
 ---
 
 ## **4. UI/UX Improvement Highlights**
 
-### Product Detail Page Improvements
+October included improvements to the product detail pages, collection pages, shopping cart, and mobile experience.
+
+### Website Improvements
 
 | Feature Area | Before | After |
-|--------------|--------|-------|
-| **Mobile Mattress Diagram** | Mattress layers and numbered labels were difficult to read. | ✅ Improved mobile diagram visibility and scaling |
-| **Mattress Layer Graphics** | New illustrations lacked numbered layer indicators. | ✅ Added CSS-based numbered layer indicators |
-| **Sticky Add to Cart** | Product variant names were truncated on mobile. | ✅ Improved variant-name visibility |
-| **Mattress Layer Description** | Empty descriptions created unnecessary spacing. | ✅ Removed unwanted empty content spacing |
-| **Product Image Sharing** | Social preview images used oversized files and HTTP URLs. | ✅ Improved image metadata and sizing |
-| **Video Poster Images** | Invalid image sizing attributes affected responsive loading. | ✅ Corrected responsive image attributes |
-| **Product Card Images** | Collection image markup contained invalid image candidates. | ✅ Corrected image markup |
-| **Product Card Headings** | Collection cards contained duplicate heading elements. | ✅ Improved heading structure |
-| **Tablet Stock Status** | Availability labels split across multiple lines. | 🔄 Awaiting final client approval |
-
-### Cart & Checkout Improvements
-
-| Feature Area | Before | After |
-|--------------|--------|-------|
-| **Cart Estimated Total** | Total remained outdated after Rebuy additions. | ✅ Total refreshes with cart updates |
-| **Cart Item Visibility** | Newly added Rebuy products remained hidden. | ✅ Cart displays added products |
-| **Cart Error Recovery** | Failed requests could leave the drawer blank. | ✅ Empty-cart state remains visible |
-| **Network Error Handling** | Add-to-cart network failures displayed no message. | ✅ Visible error feedback |
-| **Sticky Cart Errors** | Error messages appeared outside the viewport. | ✅ Improved error visibility |
-| **Rebuy Product Availability** | Sold-out products could appear as purchasable. | ✅ Improved availability handling |
-| **Accessory Discount Display** | Some accessories advertised discounts not applied at checkout. | ✅ Corrected discount eligibility synchronization |
-| **Connecticut Recycling Fee** | Previous recycling fee was $16.00 per unit. | ✅ Updated to $19.50 per unit |
+|---------------|---------|--------|
+| **Sticky Add to Cart** | Product variant names were truncated on mobile. | ✅ Improved variant name visibility |
+| **Mattress Diagrams** | Layer diagrams were difficult to read on mobile. | ✅ Enlarged mobile layer presentation |
+| **Mattress Layer Design** | Updated images lacked numbered layer indicators. | ✅ CSS-based numbering and indicators added |
+| **Mattress Collections** | Incorrect products appeared in some collections. | ✅ Updated collection template assignments |
+| **Product Cards** | Duplicate product heading elements appeared in markup. | ✅ Improved heading structure |
+| **Product Images** | Invalid responsive image attributes affected image selection. | ✅ Corrected responsive image markup |
+| **Cart Navigation** | Keyboard focus was lost after changing cart quantities. | ✅ Improved focus management |
+| **Cart Accessibility** | Cart headings skipped hierarchy levels. | ✅ Corrected heading structure |
+| **Text Readability** | Product captions had insufficient text contrast. | ✅ Improved accessibility contrast |
+| **Product Pricing** | Accessories displayed discounts not applied at checkout. | ✅ Improved pricing consistency |
+| **Search Experience** | Search suggestion button did not submit queries. | ✅ Restored full search navigation |
+| **Cart Recommendations** | Unavailable products were offered for purchase. | ✅ Improved recommendation availability |
+| **Cart Error Handling** | Purchase failures could occur without visible feedback. | ✅ Improved error communication |
+| **Mattress Descriptions** | Missing content created unnecessary spacing. | ✅ Removed unwanted empty content |
+| **SEO Titles** | Duplicate Keetsa suffix appeared in page titles. | ✅ Cleaner search-result titles |
+| **Recycling Fees** | Connecticut fee required an updated rate. | ✅ Updated to $19.50 per unit |
 
 ### Accessibility Improvements
 
-| Feature Area | Before | After |
-|--------------|--------|-------|
-| **Cart Heading Structure** | Cart page skipped heading levels. | ✅ Improved heading hierarchy |
-| **Text Contrast** | Product and financing captions failed contrast requirements. | ✅ Improved readability and contrast |
-| **Cart Keyboard Navigation** | Keyboard focus was lost after cart updates. | ✅ Improved focus management |
-| **Product Card Accessibility** | Product cards contained duplicate headings. | ✅ Simplified heading structure |
-| **Product Badges** | Discount and availability badges lacked accessible names. | ✅ Improved screen-reader information |
-| **ADA Remediation** | Multiple accessibility issues required corrections. | ✅ October Week 1 remediation completed |
+| Feature | Improvement | Status |
+|---------|-------------|--------|
+| Cart Keyboard Navigation | Improved focus behavior after quantity updates and removal. | ✅ Done |
+| Cart Heading Structure | Added appropriate heading hierarchy. | ✅ Done |
+| Product Text Contrast | Improved caption readability against backgrounds. | ✅ Done |
+| Product Variant Labels | Improved visibility of mobile variant names. | ✅ Done |
+| Product Card Headings | Addressed duplicate headings. | ✅ Done |
+| Product Badge Accessibility | Restored accessible product badge information. | ✅ Done |
+| Mobile Navigation Drawer | Prevent unwanted sideways menu movement. | Final Client QA |
+| Tablet Stock Status | Keep stock availability labels readable. | Final Client QA |
 
-### SEO & Merchandising Improvements
+### SEO & Performance Enhancements
 
-| Feature Area | Before | After |
-|--------------|--------|-------|
-| **Page Titles** | Keetsa brand names appeared twice in SEO titles. | ✅ Removed duplicate brand suffixes |
-| **Product Structured Data** | Multiple product entities appeared on mattress pages. | ✅ Structured-data remediation completed |
-| **Product Pricing Metadata** | Product metadata displayed incorrect discount prices. | ✅ Corrected pricing information |
-| **Open Graph Pricing** | Some price values contained invalid separators. | ✅ Improved price metadata formatting |
-| **Mattress Collections** | Collections shared templates with incorrect product listings. | ✅ Updated collection templates |
-| **Predictive Search** | Search dropdown selection failed to navigate. | ✅ Restored search submission |
+| Feature Area | Improvement | Business Benefit |
+|--------------|-------------|------------------|
+| **Structured Data** | Corrected product pricing information. | More reliable product data for search engines. |
+| **Product Schema** | Addressed duplicate product entities. | Improved structured data consistency. |
+| **Open Graph Images** | Optimized image URLs and dimensions. | More reliable social sharing previews. |
+| **Product Image Loading** | Fixed malformed image source sets. | Improved responsive image selection. |
+| **SEO Page Titles** | Removed duplicate brand suffixes. | Cleaner search result presentation. |
+| **Collection Templates** | Corrected product collection assignments. | More accurate product discovery. |
 
-### Additional Platform Enhancements
+### Security & Platform Improvements
 
-| Feature Area | Previous State | Current Progress |
-|--------------|----------------|------------------|
-| **Customer Accounts** | Legacy password-based customer accounts. | 🔄 Passwordless account migration in client QA |
-| **Theme Upgrade** | Older Dawn theme architecture. | 🔄 Dawn upgrade under final client QA |
-| **Security Hardening** | Public theme source maps exposed original code. | 🔄 Minified asset implementation in client QA |
-| **Navigation Links** | Appointment, call, and store-location links remained visible. | 🔄 Visibility changes in final client QA |
-| **AI Search** | Standard Shopify predictive search. | 🔄 AI-powered search feasibility under review |
-| **Shopify Rollouts** | Manual weekly theme publishing. | 🔄 Scheduled releases and A/B testing under evaluation |
-| **Product Bundles** | Customers must select component sizes individually. | ⏸ Bundle development awaiting dependencies |
+| Initiative | October Progress | Status |
+|------------|------------------|--------|
+| Penetration Test Remediation | Reviewed discount code security and source-map exposure. | Client Review / QA |
+| Theme Asset Protection | Prepared minified JS/CSS delivery approach. | Final Client QA |
+| Cookie Consent Management | Continued script and cookie categorization review. | In Progress |
+| Shopify Theme Upgrade | Evaluated Dawn 16.0.0 compatibility. | Final Client QA |
+| Customer Accounts Upgrade | Completed migration checks and prepared updated account experience. | First Client QA |
+| Shopify AI Search | Researching improved search capabilities. | In Progress |
+| Shopify Rollouts | Researching scheduled releases and A/B testing. | In Progress |
 
 ---
 
 ## **5. On-Hold Items & Action Plan**
 
-The following table summarizes active website-development work, outstanding approvals, and unresolved dependencies.
+The following table prioritizes unresolved website development, security, accessibility, integration, and storefront configuration activities.
 
-### Priority Development & QA Items
-
-| Key | Description | Next Step | Owner |
-|-----|-------------|-----------|-------|
-| KEET-628 | Remove penetration-test reviews from product pages | Identify and delete test reviews; verify product ratings | Bobby Hudgins |
-| KEET-627 | Hide appointment, call, and store-location links | Obtain final client approval | Olivia Alvarez |
-| KEET-624 | Tablet PDP stock status wrapping | Complete responsive QA and obtain approval | Olivia Alvarez |
-| KEET-619 | Mobile navigation horizontal scrolling | Complete device testing and client QA | Olivia Alvarez |
-| KEET-613 | Security review of discount codes | Obtain client confirmation and deactivate unsafe codes | Olivia Alvarez |
-| KEET-608 | Monthly dependency and script security checks | Configure recurring security checks and documentation | Bobby Hudgins |
-| KEET-607 | Prevent public theme source-map exposure | Complete client QA of minified theme assets | Olivia Alvarez |
-| KEET-602 | Automated weekly theme validation | Configure GitHub Actions and baseline checks | Bobby Hudgins |
-| KEET-601 | Shopify AI-powered search evaluation | Complete feature comparison and recommendation | Bobby Hudgins |
-| KEET-600 | Shopify Rollouts evaluation | Complete scheduling and A/B testing assessment | Bobby Hudgins |
-| KEET-599 | Shopify Dawn upgrade | Complete client approval and upgrade planning | Olivia Alvarez |
-| KEET-585 | GemPages template cleanup | Complete page migration, redirects, and template assignments | Bobby Hudgins |
-| KEET-525 | Cookie and script consent categorization | Finalize categories and obtain security approval | Bobby Hudgins |
-| KEET-375 | Customer Accounts Upgrade | Complete first client QA and migration approval | Bobby Hudgins |
-
-### Product Bundle Development
+### Active Development & Client Review
 
 | Key | Description | Next Step | Owner |
-|-----|-------------|-----------|-------|
-| KEET-567 | Yotpo review attribution for bundles | Validate review counts and document grouping process | Olivia Alvarez |
-| KEET-561 | Shopify bundle order integration with SAP | Complete end-to-end test order and SAP sign-off | Olivia Alvarez |
-| KEET-560 | Recycling fee support for bundle components | Update checkout extension and validate state fees | Olivia Alvarez |
-| KEET-559 | Bundle product size synchronization | Complete implementation after integration blockers are resolved | Olivia Alvarez |
+|-----|-------------|------------|--------|
+| KEET-627 | Hide appointment, call, and store locator options | Obtain final client approval. | Olivia Alvarez |
+| KEET-624 | Tablet PDP stock status wrapping | Complete responsive QA and client approval. | Olivia Alvarez |
+| KEET-619 | Mobile menu horizontal scrolling | Validate mobile devices and approve fix. | Olivia Alvarez |
+| KEET-613 | Discount code security cleanup | Obtain approval and deactivate identified codes. | Olivia Alvarez |
+| KEET-607 | Theme JS/CSS source-map protection | Complete final QA and deployment review. | Olivia Alvarez |
+| KEET-599 | Shopify Dawn 16.0.0 upgrade | Approve upgrade approach and migration plan. | Olivia Alvarez |
+| KEET-375 | Customer Accounts Upgrade | Complete client QA before account migration. | Bobby Hudgins |
+| KEET-601 | Shopify AI-powered search research | Finalize feasibility analysis and recommendation. | Bobby Hudgins |
+| KEET-600 | Shopify Rollouts research | Complete A/B testing and release scheduling assessment. | Bobby Hudgins |
+| KEET-585 | GemPages template cleanup | Complete native template migration and redirects. | Bobby Hudgins |
+| KEET-525 | Cookie and script categorization | Obtain sign-off and update consent settings. | Bobby Hudgins |
+| KEET-261 | Shopify user permissions | Complete access review and permission updates. | Olivia Alvarez |
 
-### Additional Website Backlog
+### Pending Website Improvements
 
 | Key | Description | Next Step | Owner |
-|-----|-------------|-----------|-------|
-| KEET-264 | Storefront checkout and order monitoring | Define implementation plan and monitoring infrastructure | Mason Kim |
-| KEET-261 | Shopify user permissions review | Complete access audit and permission updates | Olivia Alvarez |
-| KEET-486 | Elevar server-side analytics evaluation | Obtain stakeholder decision on evaluation | Olivia Alvarez |
-| KEET-382 | Inventory and warehouse allocation issue | Correct fulfillment location assignment | Mason Kim |
-| KEET-373 | Compare Mattress metafield documentation | Complete merchandising reference documentation | J Vishal |
-| KEET-344 | New Compare Mattress page | Finalize mobile design and resume development | J Vishal |
-| KEET-243 | Mattress recommendation quiz | Confirm requirements and implementation timeline | Olivia Alvarez |
-| KEET-228 | Shipping Protection disappears from cart | Separate protection visibility from cross-sell logic | Unassigned |
-| KEET-226 | Keetsa accessibility review | Define audit scope and acceptance criteria | Unassigned |
-| KEET-209 | Shipping configuration redesign | Confirm shipping methods and inventory mapping | Bobby Hudgins |
-| KEET-208 | Shopify–SAP order modification synchronization | Finalize integration design and implementation | Bobby Hudgins |
-| KEET-139 | Criteo Ads integration | Confirm installation and tracking requirements | Unassigned |
-| KEET-137 | Metafields Guru installation | Confirm app setup requirements | Unassigned |
-| KEET-136 | Klaviyo integration | Confirm configuration and activation requirements | Unassigned |
-| KEET-134 | Keetsa and Hotels page migration | Build and test native Shopify page | J Vishal |
+|-----|-------------|------------|--------|
+| KEET-628 | Remove penetration-test product reviews | Identify and remove test reviews from both stores. | Bobby Hudgins |
+| KEET-608 | Monthly dependency and script security checks | Configure recurring checks and documentation. | Bobby Hudgins |
+| KEET-602 | Automated Shopify Theme Check | Configure GitHub Actions workflow. | Bobby Hudgins |
+| KEET-567 | Yotpo bundle review attribution | Confirm review grouping and attribution rules. | Olivia Alvarez |
+| KEET-561 | Shopify bundle orders in SAP | Complete SAP test order and integration validation. | Olivia Alvarez |
+| KEET-560 | Recycling fees for bundle products | Update checkout extension and validate fee rules. | Olivia Alvarez |
+| KEET-559 | Bundle product size synchronization | Complete implementation after dependency approvals. | Olivia Alvarez |
+| KEET-228 | Shipping Protection disappearing | Decouple protection visibility from cross-sells. | Unassigned |
+| KEET-382 | Shopify inventory warehouse allocation | Correct inventory location and fulfillment mapping. | Mason Kim |
+| KEET-344 | New mattress comparison page | Finalize mobile design and resume development. | J Vishal |
+| KEET-373 | Mattress comparison metafield documentation | Document product data mapping. | J Vishal |
+| KEET-243 | Mattress recommendation quiz | Confirm requirements and implementation schedule. | Olivia Alvarez |
+| KEET-264 | Storefront monitoring application | Plan checkout and order monitoring implementation. | Unassigned |
+| KEET-486 | Server-side analytics evaluation | Confirm Elevar evaluation decision. | Olivia Alvarez |
+| KEET-226 | Keetsa accessibility review | Define audit scope and acceptance criteria. | Unassigned |
+| KEET-134 | Keetsa and Hotels page migration | Complete native page development and QA. | J Vishal |
 
-### Key Dependencies & Risks
+### Storefront Operations & Integration Dependencies
 
-| Priority | Area | Business Risk | Recommended Action |
-|----------|------|---------------|--------------------|
-| High | Product Bundles | Incorrect SAP orders or missing recycling fees | Complete integration validation before launch |
-| High | Security | Test reviews and weak discount codes may affect customers | Prioritize cleanup and security approval |
-| High | Inventory Allocation | Incorrect warehouse selection may delay fulfillment | Review Shopify location configuration |
-| Medium | Customer Accounts | Legacy account functionality approaching retirement | Complete migration testing and approval |
-| Medium | Mobile UX | Navigation and PDP wrapping issues remain unresolved | Complete client QA |
-| Medium | Shipping Protection | Missing protection option may reduce attachment revenue | Restore independent protection visibility |
-| Medium | Theme Security | Public source maps expose theme implementation details | Complete minification rollout |
-| Medium | Accessibility | Remaining ADA checks require validation | Continue accessibility review |
+| Key | Description | Next Step | Owner |
+|-----|-------------|------------|--------|
+| KEET-510 | California recycling fee investigation | Confirm whether Shopify changes are required. | Bobby Hudgins |
+| KEET-209 | Shipping configuration redesign | Review shipping methods and inventory mapping. | Bobby Hudgins |
+| KEET-208 | Shopify–SAP order modification synchronization | Confirm integration approach and implementation. | Bobby Hudgins |
+| KEET-203 | Missing Shopify shipping rules | Configure restrictions for unsupported destinations. | Mason Kim |
+| KEET-204 | Tax and recycling fee rules | Confirm applicable checkout rules. | Mason Kim |
+| KEET-200 | Inventory location rules | Review inventory allocation configuration. | Mason Kim |
+| KEET-199 | SAP–Shopify integration gaps | Document integration issues and proposed changes. | Mason Kim |
+| KEET-198 | Shipping and fulfillment processes | Align fulfillment configuration and processes. | Mason Kim |
+
+### Priority Recommendations
+
+| Priority | Focus Area | Recommended Action |
+|----------|------------|--------------------|
+| **High** | Security | Complete penetration-test review cleanup and discount-code remediation. |
+| **High** | Customer Accounts | Finalize client QA for the Shopify account migration. |
+| **High** | Shopify Bundles | Validate SAP integration and recycling fees before launch. |
+| **High** | Cart Experience | Resolve the outstanding Shipping Protection issue. |
+| **Medium** | Mobile UX | Complete approval of navigation and tablet PDP fixes. |
+| **Medium** | Storefront Modernization | Finalize theme upgrade and remaining GemPages migration. |
+| **Medium** | Product Discovery | Continue AI search and mattress comparison improvements. |
 
 ---
 
@@ -256,155 +264,158 @@ The following table summarizes active website-development work, outstanding appr
 
 ### Complete Jira Ticket Register
 
-**Reporting Period:** October 1–31, 2026
+**Reporting Period:** October 1–31, 2026  
+**Total Tickets:** 76  
+**Completed:** 26  
+**Not Done:** 50
 
-**Dataset:** 76 Jira tickets
+The appendix includes all supplied Jira tickets, including historical backlog items and operational or automation-related tickets excluded from website development highlights.
 
-The appendix includes all supplied tickets, including older backlog items and non-website operational tasks, for complete traceability.
+Tickets are grouped by issue type and then by status. Dates use `YYYY-MM-DD`; `—` indicates unavailable information.
 
-Tickets are grouped by issue type and status. Dates use `YYYY-MM-DD`; unresolved dates are shown as `—`.
-
-### 6.1 Bug Tickets
-
-| Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
-|------|-----|---------|--------|----------|----------|---------|----------|
-| Bug | Zinus-KEET-618 | Fix Rebuy sold-out bundle additions and accessible badge names | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-26 | 2026-10-26 |
-| Bug | Zinus-KEET-617 | Fix duplicate Keetsa brand suffix in page titles | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-22 | 2026-10-29 |
-| Bug | Zinus-KEET-616 | Fix predictive search submission | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-21 | 2026-10-29 |
-| Bug | Zinus-KEET-615 | Fix off-screen sticky Add to Cart errors | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-20 | 2026-10-23 |
-| Bug | Zinus-KEET-605 | Display errors when Add to Cart network requests fail | ✅ Done | Olivia Alvarez | Bobby Hudgins | 2026-10-12 | 2026-10-20 |
-| Bug | Zinus-KEET-604 | Fix Rebuy recommendations offering sold-out products | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | 2026-10-29 |
-| Bug | Zinus-KEET-603 | Fix missing cart items after Rebuy additions | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | 2026-10-29 |
-| Bug | Zinus-KEET-595 | Fix outdated estimated cart total after Rebuy additions | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-06 | 2026-10-13 |
-| Bug | Zinus-KEET-594 | Fix empty mattress layer introduction spacing | ✅ Done | Olivia Alvarez | Bobby Hudgins | 2026-10-06 | 2026-10-12 |
-| Bug | Zinus-KEET-624 | Prevent stock status wrapping on tablet PDP | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-27 | — |
-| Bug | Zinus-KEET-619 | Fix horizontal scrolling in mobile navigation | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-27 | — |
-| Bug | Zinus-KEET-228 | Shipping Protection disappears without cross-sell products | On Hold | Unassigned | Mason Kim | 2026-02-04 | — |
-
-### 6.2 Task Tickets — Completed
+### 6.1 Bugs
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Task | Zinus-KEET-614 | Fix blank cart drawer after failed Add to Cart | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-19 | 2026-10-23 |
-| Task | Zinus-KEET-612 | Fix duplicate product card headings | ✅ Done | J Vishal | J Vishal | 2026-10-15 | 2026-10-26 |
-| Task | Zinus-KEET-611 | Fix invalid collection product image srcset | ✅ Done | Olivia Alvarez | J Vishal | 2026-10-15 | 2026-10-20 |
-| Task | Zinus-KEET-610 | Optimize PDP Open Graph images | ✅ Done | Olivia Alvarez | J Vishal | 2026-10-15 | 2026-10-20 |
-| Task | Zinus-KEET-609 | Fix malformed PDP video poster srcset | ✅ Done | J Vishal | J Vishal | 2026-10-15 | 2026-10-26 |
-| Task | Zinus-KEET-606 | Improve mobile mattress layer diagram | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-13 | 2026-10-29 |
-| Task | Zinus-KEET-597 | Fix duplicate mattress product structured data | ✅ Done | Bobby Hudgins | J Vishal | 2026-10-08 | 2026-10-13 |
-| Task | Zinus-KEET-596 | Fix incorrect mattress pricing metadata | ✅ Done | Bobby Hudgins | J Vishal | 2026-10-08 | 2026-10-13 |
-| Task | Zinus-KEET-592 | Update mattress collection templates | ✅ Done | Bobby Hudgins | J Vishal | 2026-09-30 | 2026-10-13 |
-| Task | Zinus-KEET-591 | October Week 1 accessibility remediation | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-05 |
-| Task | Zinus-KEET-590 | Correct cart page heading hierarchy | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
-| Task | Zinus-KEET-589 | Improve product page text contrast | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
-| Task | Zinus-KEET-588 | Fix cart drawer keyboard focus | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
-| Task | Zinus-KEET-587 | Add mattress layer numbering and arrows | ✅ Done | Bobby Hudgins | J Vishal | 2026-09-29 | 2026-10-13 |
-| Task | Zinus-KEET-577 | Correct accessory discount synchronization | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-21 | 2026-10-13 |
-| Task | Zinus-KEET-518 | Update Connecticut mattress recycling fee | ✅ Done | Bobby Hudgins | Mason Kim | 2026-07-06 | 2026-10-13 |
+| Bug | KEET-618 | Fix Rebuy sold-out bundles and accessible product badges | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-26 | 2026-10-26 |
+| Bug | KEET-617 | Fix duplicate Keetsa suffix in SEO titles | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-22 | 2026-10-29 |
+| Bug | KEET-616 | Fix predictive search submission | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-21 | 2026-10-29 |
+| Bug | KEET-615 | Fix hidden sticky Add to Cart errors | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-20 | 2026-10-23 |
+| Bug | KEET-605 | Show network failure errors on Add to Cart | ✅ Done | Olivia Alvarez | Bobby Hudgins | 2026-10-12 | 2026-10-20 |
+| Bug | KEET-604 | Fix sold-out Rebuy recommendations | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | 2026-10-29 |
+| Bug | KEET-603 | Fix missing cart items after Rebuy additions | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | 2026-10-29 |
+| Bug | KEET-595 | Fix stale cart estimated totals | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-06 | 2026-10-13 |
+| Bug | KEET-594 | Fix empty mattress layer introduction | ✅ Done | Olivia Alvarez | Bobby Hudgins | 2026-10-06 | 2026-10-12 |
+| Bug | KEET-624 | Fix tablet PDP stock status wrapping | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-27 | — |
+| Bug | KEET-619 | Fix mobile menu horizontal scrolling | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-27 | — |
+| Bug | KEET-228 | Shipping Protection disappears without cross-sells | On Hold | — | Mason Kim | 2026-02-04 | — |
 
-### 6.3 Task Tickets — Client QA & Revision
+### 6.2 Stories
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Task | Zinus-KEET-627 | Hide appointment, call, and store-location links | Final Client QA | Olivia Alvarez | J Vishal | 2026-10-29 | — |
-| Task | Zinus-KEET-607 | Serve minified theme assets to prevent source-map exposure | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-14 | — |
-| Task | Zinus-KEET-599 | Research Dawn theme upgrade to version 16.0.0 | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-12 | — |
-| Task | Zinus-KEET-375 | Customer Accounts Upgrade | First Client QA | Bobby Hudgins | Bobby Hudgins | 2026-05-07 | — |
-| Task | Zinus-KEET-613 | Pentest discount code cleanup | Client Info Needed | Olivia Alvarez | Bobby Hudgins | 2026-10-19 | — |
-| Task | Zinus-KEET-212 | Compare AI-powered QA and testing services | For Revision | Joshua Cortez | Mason Kim | 2026-02-04 | — |
+| Story | KEET-593 | Fix truncated variant names in Sticky Add to Cart | ✅ Done | Olivia Alvarez | Juhi Sagar Gupta | 2026-09-30 | 2026-10-12 |
 
-### 6.4 Task Tickets — In Progress
+### 6.3 Tasks — Completed
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Task | Zinus-KEET-601 | Research Shopify AI-powered search | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
-| Task | Zinus-KEET-600 | Research Shopify Rollouts and A/B testing | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
-| Task | Zinus-KEET-585 | Clean up GemPages templates and assignments | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-09-23 | — |
-| Task | Zinus-KEET-525 | Review cookie and script consent classifications | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-07-27 | — |
-| Task | Zinus-KEET-510 | Investigate California recycling fees on non-Shopify orders | In Progress | Bobby Hudgins | Mason Kim | 2026-06-29 | — |
-| Task | Zinus-KEET-305 | Shopify sale update AI automation feasibility | In Progress | Joshua Cortez | J Vishal | 2026-03-16 | — |
-| Task | Zinus-KEET-261 | Review Shopify users and permissions | In Progress | Olivia Alvarez | Olivia Alvarez | 2026-02-19 | — |
-| Task | Zinus-KEET-208 | Implement Shopify–SAP order modification synchronization | In Progress | Bobby Hudgins | Mason Kim | 2026-02-04 | — |
+| Task | KEET-614 | Fix blank cart drawer after failed Add to Cart | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-19 | 2026-10-23 |
+| Task | KEET-612 | Fix duplicate product card headings | ✅ Done | J Vishal | J Vishal | 2026-10-15 | 2026-10-26 |
+| Task | KEET-611 | Fix malformed collection product image srcset | ✅ Done | Olivia Alvarez | J Vishal | 2026-10-15 | 2026-10-20 |
+| Task | KEET-610 | Optimize PDP Open Graph images | ✅ Done | Olivia Alvarez | J Vishal | 2026-10-15 | 2026-10-20 |
+| Task | KEET-609 | Fix malformed PDP video poster srcset | ✅ Done | J Vishal | J Vishal | 2026-10-15 | 2026-10-26 |
+| Task | KEET-606 | Improve mattress layer diagrams on mobile | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-10-13 | 2026-10-29 |
+| Task | KEET-597 | Fix duplicate product structured data | ✅ Done | Bobby Hudgins | J Vishal | 2026-10-08 | 2026-10-13 |
+| Task | KEET-596 | Correct mattress structured pricing data | ✅ Done | Bobby Hudgins | J Vishal | 2026-10-08 | 2026-10-13 |
+| Task | KEET-592 | Update mattress collection templates | ✅ Done | Bobby Hudgins | J Vishal | 2026-09-30 | 2026-10-13 |
+| Task | KEET-591 | October Week 1 accessibility remediation | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-05 |
+| Task | KEET-590 | Correct cart heading hierarchy | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
+| Task | KEET-589 | Improve product caption text contrast | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
+| Task | KEET-588 | Fix cart drawer keyboard focus | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-29 | 2026-10-01 |
+| Task | KEET-587 | Add CSS numbering to mattress layer diagrams | ✅ Done | Bobby Hudgins | J Vishal | 2026-09-29 | 2026-10-13 |
+| Task | KEET-577 | Correct accessory discount synchronization | ✅ Done | Bobby Hudgins | Bobby Hudgins | 2026-09-21 | 2026-10-13 |
+| Task | KEET-518 | Update Connecticut recycling fee to $19.50 | ✅ Done | Bobby Hudgins | Mason Kim | 2026-07-06 | 2026-10-13 |
 
-### 6.5 Task Tickets — On Hold
-
-| Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
-|------|-----|---------|--------|----------|----------|---------|----------|
-| Task | Zinus-KEET-567 | Validate Yotpo bundle review attribution | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-10 | — |
-| Task | Zinus-KEET-561 | Validate SAP integration for bundle orders | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
-| Task | Zinus-KEET-560 | Extend recycling fees to bundle components | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
-| Task | Zinus-KEET-559 | Synchronize bundle component sizes | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
-| Task | Zinus-KEET-521 | Improve Ship-Later order notification email | On Hold | Bobby Hudgins | Mason Kim | 2026-07-09 | — |
-| Task | Zinus-KEET-486 | Follow up on Elevar analytics evaluation | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-06-18 | — |
-| Task | Zinus-KEET-382 | Fix Shopify inventory and warehouse allocation | On Hold | Mason Kim | Olivia Alvarez | 2026-05-19 | — |
-| Task | Zinus-KEET-373 | Document Compare Mattress metafield mappings | On Hold | J Vishal | Bobby Hudgins | 2026-05-07 | — |
-| Task | Zinus-KEET-344 | Create new Compare Mattress page | On Hold | J Vishal | J Vishal | 2026-04-23 | — |
-| Task | Zinus-KEET-243 | Mattress recommendation quiz | On Hold | Olivia Alvarez | Olivia Alvarez | 2026-02-10 | — |
-| Task | Zinus-KEET-209 | Redesign Shopify shipping configuration | On Hold | Bobby Hudgins | Mason Kim | 2026-02-04 | — |
-| Task | Zinus-KEET-139 | Criteo Ads app setup | On Hold | Unassigned | Bobby Hudgins | 2026-01-02 | — |
-| Task | Zinus-KEET-136 | Klaviyo app setup | On Hold | Unassigned | Bobby Hudgins | 2026-01-02 | — |
-
-### 6.6 Task Tickets — To Do
+### 6.4 Tasks — Client QA & Revision
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Task | Zinus-KEET-628 | Remove penetration-test product reviews | To Do | Bobby Hudgins | J Vishal | 2026-10-30 | — |
-| Task | Zinus-KEET-608 | Monthly dependency and third-party script checks | To Do | Bobby Hudgins | Bobby Hudgins | 2026-10-14 | — |
-| Task | Zinus-KEET-602 | Automated theme validation on weekly release branches | To Do | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
-| Task | Zinus-KEET-265 | Refactor Claude Code commands and knowledge base | To Do | Mason Kim | Mason Kim | 2026-02-23 | — |
-| Task | Zinus-KEET-264 | Build storefront checkout monitoring application | To Do | Unassigned | Mason Kim | 2026-02-20 | — |
-| Task | Zinus-KEET-226 | Keetsa accessibility review | To Do | Unassigned | Mason Kim | 2026-02-04 | — |
-| Task | Zinus-KEET-205 | Operations process documentation and SOP creation | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-204 | Finance, tax, and fee rules clarification | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-203 | Missing shipping rules configuration | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-202 | Replacement order SOP alignment | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-201 | Order cancellation business rules | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-200 | Inventory and location rules review | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-199 | SAP–Shopify integration gap analysis | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-198 | Shipping and fulfillment process standardization | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
-| Task | Zinus-KEET-137 | Metafields Guru app setup | To Do | Unassigned | Bobby Hudgins | 2026-01-02 | — |
-| Task | Zinus-KEET-134 | Convert Keetsa and Hotels page from GemPages | To Do | J Vishal | Bobby Hudgins | 2025-12-30 | — |
+| Task | KEET-627 | Hide appointment, call, and store locator options | Final Client QA | Olivia Alvarez | J Vishal | 2026-10-29 | — |
+| Task | KEET-607 | Serve pre-minified theme assets | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-14 | — |
+| Task | KEET-599 | Research Dawn 16.0.0 theme upgrade | Final Client QA | Olivia Alvarez | Bobby Hudgins | 2026-10-12 | — |
+| Task | KEET-375 | Customer Accounts Upgrade | First Client QA | Bobby Hudgins | Bobby Hudgins | 2026-05-07 | — |
+| Task | KEET-613 | Penetration-test discount code cleanup | Client Info Needed | Olivia Alvarez | Bobby Hudgins | 2026-10-19 | — |
+| Task | KEET-212 | Compare AI-powered QA/testing services | For Revision | Joshua Cortez | Mason Kim | 2026-02-04 | — |
 
-### 6.7 Story Tickets
+### 6.5 Tasks — In Progress
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Story | Zinus-KEET-593 | Fix variant name truncation in Sticky Add to Cart | ✅ Done | Olivia Alvarez | Juhi Sagar Gupta | 2026-09-30 | 2026-10-12 |
+| Task | KEET-601 | Research Shopify AI-powered search | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
+| Task | KEET-600 | Research Shopify Rollouts | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
+| Task | KEET-585 | Clean up remaining GemPages templates | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-09-23 | — |
+| Task | KEET-525 | Review cookie and script classifications | In Progress | Bobby Hudgins | Bobby Hudgins | 2026-07-27 | — |
+| Task | KEET-510 | Investigate CA recycling fees on non-Shopify orders | In Progress | Bobby Hudgins | Mason Kim | 2026-06-29 | — |
+| Task | KEET-305 | Shopify sale update automation feasibility | In Progress | Joshua Cortez | J Vishal | 2026-03-16 | — |
+| Task | KEET-261 | Review Shopify user permissions | In Progress | Olivia Alvarez | Olivia Alvarez | 2026-02-19 | — |
+| Task | KEET-208 | Shopify–SAP order modification synchronization | In Progress | Bobby Hudgins | Mason Kim | 2026-02-04 | — |
 
-### 6.8 Epic Tickets
+### 6.6 Tasks — On Hold
 
 | Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
 |------|-----|---------|--------|----------|----------|---------|----------|
-| Epic | Zinus-KEET-566 | Shopify Bundles | To Do | Unassigned | Bobby Hudgins | 2026-09-10 | — |
-| Epic | Zinus-KEET-247 | Keetsa Business SOP Documentation | To Do | Mason Kim | Mason Kim | 2026-02-16 | — |
-| Epic | Zinus-KEET-47 | Reports | To Do | Unassigned | Bobby Hudgins | 2025-11-04 | — |
-| Epic | Zinus-KEET-46 | Theme Migration | To Do | Unassigned | Bobby Hudgins | 2025-11-04 | — |
+| Task | KEET-567 | Confirm Yotpo bundle review attribution | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-10 | — |
+| Task | KEET-561 | Validate SAP ingestion of bundle orders | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
+| Task | KEET-560 | Extend recycling fees to bundle components | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
+| Task | KEET-559 | Bundle PDP component size synchronization | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-09-02 | — |
+| Task | KEET-521 | Improve Ship-Later email format for SAP | On Hold | Bobby Hudgins | Mason Kim | 2026-07-09 | — |
+| Task | KEET-486 | Follow up on Elevar analytics evaluation | On Hold | Olivia Alvarez | Bobby Hudgins | 2026-06-18 | — |
+| Task | KEET-382 | Fix Shopify inventory warehouse allocation | On Hold | Mason Kim | Olivia Alvarez | 2026-05-19 | — |
+| Task | KEET-373 | Document mattress comparison metafields | On Hold | J Vishal | Bobby Hudgins | 2026-05-07 | — |
+| Task | KEET-344 | Create new mattress comparison page | On Hold | J Vishal | J Vishal | 2026-04-23 | — |
+| Task | KEET-243 | Mattress recommendation quiz | On Hold | Olivia Alvarez | Olivia Alvarez | 2026-02-10 | — |
+| Task | KEET-209 | Redesign Shopify shipping configuration | On Hold | Bobby Hudgins | Mason Kim | 2026-02-04 | — |
+| Task | KEET-139 | Criteo Ads application setup | On Hold | — | Bobby Hudgins | 2026-01-02 | — |
+| Task | KEET-136 | Klaviyo application setup | On Hold | — | Bobby Hudgins | 2026-01-02 | — |
+
+### 6.7 Tasks — To Do
+
+| Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
+|------|-----|---------|--------|----------|----------|---------|----------|
+| Task | KEET-628 | Remove penetration-test product reviews | To Do | Bobby Hudgins | J Vishal | 2026-10-30 | — |
+| Task | KEET-608 | Monthly dependency and script security checks | To Do | Bobby Hudgins | Bobby Hudgins | 2026-10-14 | — |
+| Task | KEET-602 | Automated Shopify Theme Check workflow | To Do | Bobby Hudgins | Bobby Hudgins | 2026-10-12 | — |
+| Task | KEET-265 | Refactor Claude Code command structure | To Do | Mason Kim | Mason Kim | 2026-02-23 | — |
+| Task | KEET-264 | Storefront checkout monitoring application | To Do | — | Mason Kim | 2026-02-20 | — |
+| Task | KEET-226 | Keetsa Patrol accessibility review | To Do | — | Mason Kim | 2026-02-04 | — |
+| Task | KEET-205 | Operations process documentation | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-204 | Finance, tax, and fee rules clarification | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-203 | Missing Shopify shipping rules | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-202 | Replacement order SOP alignment | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-201 | Order change and cancellation rules | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-200 | Inventory location rules review | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-199 | SAP–Shopify integration gap analysis | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-198 | Shipping and fulfillment process standardization | To Do | Mason Kim | Mason Kim | 2026-02-02 | — |
+| Task | KEET-137 | Metafields Guru application setup | To Do | — | Bobby Hudgins | 2026-01-02 | — |
+| Task | KEET-134 | Keetsa and Hotels GemPages conversion | To Do | J Vishal | Bobby Hudgins | 2025-12-30 | — |
+
+### 6.8 Epics
+
+| Type | Key | Summary | Status | Assignee | Reporter | Created | Resolved |
+|------|-----|---------|--------|----------|----------|---------|----------|
+| Epic | KEET-566 | Shopify Bundles | To Do | — | Bobby Hudgins | 2026-09-10 | — |
+| Epic | KEET-247 | Keetsa Business SOP Documentation | To Do | Mason Kim | Mason Kim | 2026-02-16 | — |
+| Epic | KEET-47 | Reports | To Do | — | Bobby Hudgins | 2025-11-04 | — |
+| Epic | KEET-46 | Theme Migration | To Do | — | Bobby Hudgins | 2025-11-04 | — |
 
 ---
 
-### Final Development Status Summary
+### Final Development Status
 
-| Category | Total | Completed | Not Completed |
-|----------|-------|-----------|---------------|
-| Bugs | 12 | 9 | 3 |
-| Tasks | 46 | 16 | 30 |
-| Stories | 1 | 1 | 0 |
-| Epics | 2 | 0 | 2 |
-| **Website Development Total** | **61** | **26** | **35** |
-
-### Overall Completion
+| Category | Completed | Pending | Total |
+|----------|-----------|---------|-------|
+| Bugs | 9 | 3 | 12 |
+| Tasks | 16 | 43 | 59 |
+| Stories | 1 | 0 | 1 |
+| Epics | 0 | 4 | 4 |
+| **Total** | **26** | **50** | **76** |
 
 | Metric | Result |
 |--------|--------|
-| Website Development Tickets | 61 |
-| Completed Tickets | 26 |
-| Outstanding Tickets | 35 |
-| **Overall Completion Rate** | **42.6%** |
+| **Overall Completion Rate** | **34.2%** |
 | Bug Resolution Rate | 75.0% |
-| Reporting Month | October 2026 |
+| Task Completion Rate | 27.1% |
+| Completed During October | 26 |
+| Remaining Open Tickets | 50 |
 
-**October 2026 Outcome:** Keetsa completed 26 website-development tickets, delivering improvements in **cart reliability, mobile product experiences, accessibility, pricing accuracy, SEO, and product recommendations**. Remaining priorities include final client QA, security remediation, Shopify modernization, and resolving dependencies before product bundle functionality can launch.
+### October 2026 Development Outcome
+
+October development delivered **26 completed Jira tickets**, including **9 resolved bugs**, with improvements concentrated on cart reliability, responsive product pages, accessibility, product metadata, and third-party integrations.
+
+The next development priorities are completing outstanding client QA, resolving security-related findings, finalizing Shopify customer account modernization, and addressing remaining storefront and integration dependencies.
 
 ---
 
-*Report generated from the supplied Jira dataset. Ticket statuses reflect the latest information available in the JSON, including updates recorded through November 2, 2026.*
+*Keetsa Development Report – October 2026*  
+*Reporting Period: October 1–31, 2026*
